@@ -8,9 +8,11 @@ import ScrollToTop from "./components/ScrollToTop.jsx";
 import "./App.css";
 
 function App() {
+  const baseUrl = import.meta.env.BASE_URL;
+
   return (
     <div className="app">
-      <BrowserRouter>
+      <BrowserRouter basename={baseUrl}>
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
