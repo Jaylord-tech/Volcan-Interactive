@@ -1,0 +1,173 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: clip;
+}
+
+.reveal {
+  opacity: 0;
+  animation: reveal-up 1.8s ease forwards;
+}
+
+.reveal-up {
+  transform: translateY(24px);
+}
+
+.reveal-left {
+  transform: translateX(-32px);
+  animation-name: reveal-left;
+}
+
+.reveal-right {
+  transform: translateX(32px);
+  animation-name: reveal-right;
+}
+
+.reveal-down {
+  transform: translateY(-24px);
+  animation-name: reveal-down;
+}
+
+/* Scroll-triggered reveals */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 1400ms ease, transform 1400ms ease;
+}
+
+.reveal-on-click {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 1400ms ease, transform 1400ms ease;
+}
+
+.reveal-slow {
+  transition-duration: 1700ms;
+}
+
+.reveal-on-scroll.reveal-left {
+  transform: translateX(-32px);
+}
+
+.reveal-on-scroll.reveal-right {
+  transform: translateX(32px);
+}
+
+.reveal-on-click.reveal-left {
+  transform: translateX(-32px);
+}
+
+.reveal-on-click.reveal-right {
+  transform: translateX(32px);
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.reveal-on-click.is-visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.reveal-on-scroll.reveal-delay-1,
+.reveal-on-click.reveal-delay-1 {
+  transition-delay: 250ms;
+}
+
+.reveal-on-scroll.reveal-delay-2,
+.reveal-on-click.reveal-delay-2 {
+  transition-delay: 500ms;
+}
+
+.reveal-on-scroll.reveal-delay-3,
+.reveal-on-click.reveal-delay-3 {
+  transition-delay: 750ms;
+}
+
+.reveal-on-scroll.reveal-delay-4,
+.reveal-on-click.reveal-delay-4 {
+  transition-delay: 1000ms;
+}
+
+.reveal-delay-1 {
+  animation-delay: 0.12s;
+}
+
+.reveal-delay-2 {
+  animation-delay: 0.24s;
+}
+
+.reveal-delay-3 {
+  animation-delay: 0.36s;
+}
+
+@keyframes reveal-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes reveal-left {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes reveal-right {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes reveal-down {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-up,
+  .reveal-left,
+  .reveal-right,
+  .reveal-down {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+button {
+  position: relative;
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border: 1px solid rgba(255, 116, 24, 0.75);
+  border-radius: inherit;
+  transform: scaleX(0);
+  transform-origin: left center;
+  opacity: 0;
+  transition: transform 280ms ease, opacity 280ms ease;
+  pointer-events: none;
+}
+
+button:hover::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
