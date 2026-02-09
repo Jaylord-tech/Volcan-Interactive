@@ -240,16 +240,6 @@
 
 }
 
-@media (min-width: 641px) {
-  .hero-landing {
-    --nav-height: 0px;
-    padding-top: 0;
-  }
-
-  .hero-landing__background {
-    top: 0;
-  }
-}
 
 @keyframes hero-pan-mobile {
   0%,
