@@ -67,6 +67,15 @@
   border-radius: 2px;
 }
 
+.featured__card[data-link="halloween"] {
+  cursor: pointer;
+}
+
+.featured__card[data-link="halloween"]:focus-visible {
+  outline: 2px solid rgba(255, 116, 24, 0.7);
+  outline-offset: 3px;
+}
+
 .featured__card img {
   width: 100%;
   aspect-ratio: 16 / 9;

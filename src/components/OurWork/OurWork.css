@@ -128,6 +128,15 @@
   width: 100%;
 }
 
+.ourwork__card[data-link="halloween"] {
+  cursor: pointer;
+}
+
+.ourwork__card[data-link="halloween"]:focus-visible {
+  outline: 2px solid rgba(255, 116, 24, 0.7);
+  outline-offset: 3px;
+}
+
 .ourwork__card::before {
   content: "";
   position: absolute;

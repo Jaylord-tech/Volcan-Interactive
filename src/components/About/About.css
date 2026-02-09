@@ -216,6 +216,7 @@
   background: none;
   border: none;
   color: #ffffff;
+  text-decoration: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -237,6 +238,19 @@
   background: url("/src/assests/button.png") center / 100% 100% no-repeat;
 }
 
+.about__cta::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border: 1px solid rgba(255, 116, 24, 0.75);
+  border-radius: inherit;
+  transform: scaleX(0);
+  transform-origin: left center;
+  opacity: 0;
+  transition: transform 280ms ease, opacity 280ms ease;
+  pointer-events: none;
+}
+
 .about__cta span {
   position: relative;
   z-index: 1;
@@ -245,6 +259,11 @@
 .about__cta:hover {
   transform: translateY(-2px);
   filter: drop-shadow(0 6px 16px rgba(255, 116, 24, 0.35));
+}
+
+.about__cta:hover::after {
+  transform: scaleX(1);
+  opacity: 1;
 }
 
 .about__decor {
@@ -318,6 +337,22 @@
 
   .about__decor {
     opacity: 0.55;
+  }
+}
+
+@media (max-width: 640px) {
+  .about__story-grid article:last-child .about__eyebrow {
+    text-align: right;
+  }
+
+  .about__story-grid article:last-child {
+    text-align: right;
+  }
+
+  .about__story-grid article:last-child p:last-child {
+    margin-left: auto;
+    margin-right: 0;
+    text-align: right;
   }
 }
 

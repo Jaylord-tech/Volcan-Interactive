@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import "./WeOffer.css";
 
 const offerCards = [
@@ -10,6 +11,7 @@ const offerCards = [
 
 function WeOffer() {
   const sectionRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -64,7 +66,11 @@ function WeOffer() {
       <p className="offer__note reveal-on-scroll">
         Learn how we support studios from concept to final delivery
       </p>
-      <button className="offer__cta reveal-on-scroll" type="button">
+      <button
+        className="offer__cta reveal-on-scroll"
+        type="button"
+        onClick={() => navigate("/services")}
+      >
         <span>View Our Services</span>
       </button>
     </section>

@@ -16,7 +16,13 @@ function Footer() {
         </span>
       </div>
       <div className="footer__socials">
-        <span className="footer__icon" aria-label="Instagram">
+        <a
+          className="footer__icon"
+          href="https://www.instagram.com/volcaninteractive/?utm_source=ig_web_button_share_sheet"
+          aria-label="Instagram"
+          target="_blank"
+          rel="noreferrer"
+        >
           <svg
             width="26"
             height="26"
@@ -30,8 +36,14 @@ function Footer() {
               fill="#020202"
             />
           </svg>
-        </span>
-        <span className="footer__icon" aria-label="X">
+        </a>
+        <a
+          className="footer__icon"
+          href="https://x.com/volcaninteract?s=21"
+          aria-label="X"
+          target="_blank"
+          rel="noreferrer"
+        >
           <svg
             width="26"
             height="26"
@@ -45,8 +57,14 @@ function Footer() {
               fill="#020202"
             />
           </svg>
-        </span>
-        <span className="footer__icon" aria-label="LinkedIn">
+        </a>
+        <a
+          className="footer__icon"
+          href="https://www.linkedin.com/company/volcaninteractive/?viewAsMember=true"
+          aria-label="LinkedIn"
+          target="_blank"
+          rel="noreferrer"
+        >
           <svg
             width="26"
             height="26"
@@ -60,8 +78,14 @@ function Footer() {
               fill="#020202"
             />
           </svg>
-        </span>
-        <span className="footer__icon" aria-label="TikTok">
+        </a>
+        <a
+          className="footer__icon"
+          href="https://www.tiktok.com/@volcaninteractive?is_from_webapp=1&sender_device=pc"
+          aria-label="TikTok"
+          target="_blank"
+          rel="noreferrer"
+        >
           <svg
             width="26"
             height="26"
@@ -75,7 +99,7 @@ function Footer() {
               fill="#020202"
             />
           </svg>
-        </span>
+        </a>
       </div>
       <div className="footer__links">
         <span>Terms of Use</span>

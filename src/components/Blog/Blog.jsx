@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 import Navbar from "../Navbar/Navbar.jsx";
 import Footer from "../Footer/Footer.jsx";
 import "./Blog.css";
@@ -6,6 +7,7 @@ import "./Blog.css";
 function Blog() {
   const sectionRef = useRef(null);
   const [mainRevealed, setMainRevealed] = useState(false);
+  const { hash } = useLocation();
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -27,6 +29,16 @@ function Blog() {
     elements.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (!hash) return;
+    const target = document.querySelector(hash);
+    if (!target) return;
+    const nav = document.querySelector(".hero__nav");
+    const navOffset = nav ? nav.getBoundingClientRect().height + 16 : 80;
+    const top = target.getBoundingClientRect().top + window.scrollY - navOffset;
+    window.scrollTo({ top: Math.max(top, 0), left: 0, behavior: "smooth" });
+  }, [hash]);
 
   return (
     <div className="page">
@@ -59,7 +71,7 @@ function Blog() {
           />
         </section>
 
-        <section className="blog__content">
+        <section className="blog__content" id="halloween">
           <div className="blog__copy">
             <img
               className="blog__title-image reveal-on-scroll reveal-left"

@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar.jsx";
+import { getContactOffset, scrollToContact } from "../../utils/scrollToContact.js";
 import "./Hero.css";
 
 const heroImages = [
@@ -14,6 +16,7 @@ const heroImages = [
 function Hero() {
   const [activeIndex, setActiveIndex] = useState(0);
   const heroRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -39,6 +42,14 @@ function Hero() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleGetInTouch = () => {
+    if (document.getElementById("contact")) {
+      scrollToContact({ offset: getContactOffset("/") });
+      return;
+    }
+    navigate({ pathname: "/", hash: "#contact" });
+  };
+
   return (
     <section ref={heroRef} className="hero-landing">
       <Navbar />
@@ -63,7 +74,11 @@ function Hero() {
             or quality.
           </p>
         </div>
-        <button className="hero-landing__cta reveal reveal-up reveal-delay-1" type="button">
+        <button
+          className="hero-landing__cta reveal reveal-up reveal-delay-1"
+          type="button"
+          onClick={handleGetInTouch}
+        >
           <span>Get in Touch</span>
         </button>
       </div>

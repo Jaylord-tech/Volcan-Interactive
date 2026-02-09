@@ -250,7 +250,7 @@
   opacity: 0;
   transform: translateY(-6px);
   transition: opacity 200ms ease, transform 200ms ease;
-  position: absolute;
+  position: fixed;
   top: 72px;
   left: 0;
   right: 0;
@@ -277,6 +277,12 @@
     rgba(34, 20, 10, 0.85)
   );
   transition: color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.hero__mobile-menu a.is-active {
+  color: #ff7418;
+  border-color: rgba(255, 116, 24, 0.85);
+  box-shadow: 0 0 12px rgba(255, 116, 24, 0.25);
 }
 
 .hero__mobile-menu a:hover {

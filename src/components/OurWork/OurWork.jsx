@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./OurWork.css";
 import Footer from "../Footer/Footer.jsx";
 import GetInTouch from "../GetInTouch/GetInTouch.jsx";
@@ -33,6 +34,8 @@ const partnerLogos = [
 ];
 
 function OurWork() {
+  const navigate = useNavigate();
+
   const handleCardMove = (event) => {
     const card = event.currentTarget;
     const rect = card.getBoundingClientRect();
@@ -50,6 +53,19 @@ function OurWork() {
     const card = event.currentTarget;
     card.style.setProperty("--tilt-rotate-x", "0deg");
     card.style.setProperty("--tilt-rotate-y", "0deg");
+  };
+
+  const handleCardClick = (item) => {
+    if (item.title === "Halloween") {
+      navigate("/blog");
+    }
+  };
+
+  const handleCardKeyDown = (event, item) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      handleCardClick(item);
+    }
   };
 
   return (
@@ -86,6 +102,12 @@ function OurWork() {
               key={item.title}
               onMouseMove={handleCardMove}
               onMouseLeave={resetCardTilt}
+              onClick={() => handleCardClick(item)}
+              onKeyDown={(event) => handleCardKeyDown(event, item)}
+              role={item.title === "Halloween" ? "button" : undefined}
+              tabIndex={item.title === "Halloween" ? 0 : undefined}
+              aria-label={item.title === "Halloween" ? "Open Halloween project" : undefined}
+              data-link={item.title === "Halloween" ? "halloween" : undefined}
             >
               <img
                 className="ourwork__card-image"

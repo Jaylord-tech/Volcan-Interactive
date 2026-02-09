@@ -92,18 +92,18 @@ function Services() {
         <section className="services-page__hero">
           <div className="services-page__overlay">
             <p className="services-page__eyebrow reveal-on-scroll">We Offer</p>
-            <h1 className="reveal-on-scroll">
+            <h1 className="reveal-on-scroll reveal-delay-1">
               Game <span className="services-page__highlight">UI/UX</span> Design and{" "}
               <span className="services-page__highlight">Implementation</span>
             </h1>
-            <p className="reveal-on-scroll">
+            <p className="reveal-on-scroll reveal-delay-2">
               We provide end to end Game UI/UX design and implementation services
               tailored for real-time interactive experiences. From early concepts
               to final in-engine delivery, we work closely with studios to create
               intuitive, performance-focused interfaces that support seamless
               storytelling and player immersion.
             </p>
-            <p className="reveal-on-scroll">
+            <p className="reveal-on-scroll reveal-delay-3">
               Our process bridges visual design and technical execution, ensuring
               every interface is polished, production-ready, and optimized for
               real gameplay constraints.

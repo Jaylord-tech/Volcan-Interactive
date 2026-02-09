@@ -1,19 +1,21 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { getContactOffset, scrollToContact } from "../utils/scrollToContact.js";
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
-  const contactOffset = 320;
-
   useEffect(() => {
     if (hash) {
       let attempts = 0;
       const tryScroll = () => {
         const target = document.querySelector(hash);
         if (target) {
+          if (hash === "#contact") {
+            scrollToContact({ offset: getContactOffset(pathname) });
+            return;
+          }
           const targetTop = target.getBoundingClientRect().top + window.scrollY;
-          const offset = hash === "#contact" ? contactOffset : 0;
-          window.scrollTo({ top: Math.max(targetTop - offset, 0), left: 0, behavior: "smooth" });
+          window.scrollTo({ top: Math.max(targetTop, 0), left: 0, behavior: "smooth" });
           return;
         }
         attempts += 1;

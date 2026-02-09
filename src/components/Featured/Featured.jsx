@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Featured.css";
 
 const slides = [
@@ -13,6 +14,7 @@ function Featured() {
   const [noTransition, setNoTransition] = useState(false);
   const loopSlides = useMemo(() => [...slides, ...slides, ...slides], []);
   const sectionRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -57,6 +59,17 @@ function Featured() {
     transform: `translateX(calc(50% - (var(--card-width) / 2) - ${activeIndex} * (var(--card-width) + var(--card-gap))))`,
   };
 
+  const handleHalloweenClick = () => {
+    navigate("/blog#halloween");
+  };
+
+  const handleCardKeyDown = (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      handleHalloweenClick();
+    }
+  };
+
   return (
     <section ref={sectionRef} className="featured">
       <p className="featured__eyebrow reveal-on-scroll">Proof of Work</p>
@@ -77,12 +90,19 @@ function Featured() {
             const isActive = position === normalizedIndex;
             const isPrev = position === prevIndex;
             const isNext = position === nextIndex;
+            const isHalloween = slide.title === "Halloween";
 
             return (
               <div
                 className={`featured__card${isActive ? " is-active" : ""}${
                   isPrev ? " is-prev" : ""
                 }${isNext ? " is-next" : ""}`}
+                onClick={isHalloween ? handleHalloweenClick : undefined}
+                onKeyDown={isHalloween ? handleCardKeyDown : undefined}
+                role={isHalloween ? "button" : undefined}
+                tabIndex={isHalloween ? 0 : undefined}
+                aria-label={isHalloween ? "Open Halloween project" : undefined}
+                data-link={isHalloween ? "halloween" : undefined}
                 key={`${slide.title}-${index}`}
               >
                 <img

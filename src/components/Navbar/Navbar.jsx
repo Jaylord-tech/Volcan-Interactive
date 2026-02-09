@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import "./Navbar.css";
+import { getContactOffset, scrollToContact } from "../../utils/scrollToContact.js";
 
 function Navbar({ hideBottomLine = false }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,6 +18,10 @@ function Navbar({ hideBottomLine = false }) {
 
     let ticking = false;
     const handleScroll = () => {
+      if (isMenuOpen) {
+        setShowNav(true);
+        return;
+      }
       if (ticking) return;
       ticking = true;
       requestAnimationFrame(() => {
@@ -38,7 +43,13 @@ function Navbar({ hideBottomLine = false }) {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      setShowNav(true);
+    }
+  }, [isMenuOpen]);
 
   useEffect(() => {
     const handleClick = (event) => {
@@ -54,15 +65,10 @@ function Navbar({ hideBottomLine = false }) {
 
   const handleContactClick = () => {
     const contactSection = document.querySelector("#contact");
-    const offset = pathname === "/" ? 260 : 320;
+    const offset = getContactOffset(pathname);
     setIsMenuOpen(false);
     if (contactSection) {
-      const targetTop = contactSection.getBoundingClientRect().top + window.scrollY;
-      window.scrollTo({
-        top: Math.max(targetTop - offset, 0),
-        left: 0,
-        behavior: "smooth",
-      });
+      scrollToContact({ offset });
     } else {
       navigate({ pathname: "/", hash: "#contact" });
     }
@@ -100,7 +106,7 @@ function Navbar({ hideBottomLine = false }) {
             <NavLink to="/about" className={({ isActive }) => (isActive ? "is-active" : undefined)}>
               About Us
             </NavLink>
-            <NavLink to="/blog" className={({ isActive }) => (isActive ? "is-active" : undefined)}>
+            <NavLink to="/news" className={({ isActive }) => (isActive ? "is-active" : undefined)}>
               News
             </NavLink>
           </nav>
@@ -123,16 +129,32 @@ function Navbar({ hideBottomLine = false }) {
         </div>
       </header>
       <div className={`hero__mobile-menu${isMenuOpen ? " is-open" : ""}`}>
-        <NavLink to="/services" onClick={() => setIsMenuOpen(false)}>
+        <NavLink
+          to="/services"
+          className={({ isActive }) => (isActive ? "is-active" : undefined)}
+          onClick={() => setIsMenuOpen(false)}
+        >
           Services
         </NavLink>
-        <NavLink to="/ourwork" onClick={() => setIsMenuOpen(false)}>
+        <NavLink
+          to="/ourwork"
+          className={({ isActive }) => (isActive ? "is-active" : undefined)}
+          onClick={() => setIsMenuOpen(false)}
+        >
           Our Works
         </NavLink>
-        <NavLink to="/about" onClick={() => setIsMenuOpen(false)}>
+        <NavLink
+          to="/about"
+          className={({ isActive }) => (isActive ? "is-active" : undefined)}
+          onClick={() => setIsMenuOpen(false)}
+        >
           About Us
         </NavLink>
-        <NavLink to="/blog" onClick={() => setIsMenuOpen(false)}>
+        <NavLink
+          to="/news"
+          className={({ isActive }) => (isActive ? "is-active" : undefined)}
+          onClick={() => setIsMenuOpen(false)}
+        >
           News
         </NavLink>
       </div>
