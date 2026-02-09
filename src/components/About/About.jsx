@@ -4,11 +4,11 @@ import Footer from "../Footer/Footer.jsx";
 import "./About.css";
 
 const partnerLogos = [
-  { name: "Figma", image: "src/assests/figma.png" },
-  { name: "Unreal", image: "src/assests/unreal.png" },
-  { name: "Rive", image: "src/assests/rive.png" },
-  { name: "Unity", image: "src/assests/unity.png" },
-  { name: "Photoshop", image: "src/assests/ps.png" },
+  { name: "Figma", image: "/assests/figma.png" },
+  { name: "Unreal", image: "/assests/unreal.png" },
+  { name: "Rive", image: "/assests/rive.png" },
+  { name: "Unity", image: "/assests/unity.png" },
+  { name: "Photoshop", image: "/assests/ps.png" },
 ];
 
 function About() {
@@ -72,7 +72,7 @@ function About() {
         <section className="about__story">
           <img
             className="about__decor about__decor--1"
-            src="src/assests/backDesign1.png"
+            src="/assests/backDesign1.png"
             alt=""
             aria-hidden="true"
             loading="lazy"
@@ -80,7 +80,7 @@ function About() {
           />
           <img
             className="about__decor about__decor--2"
-            src="src/assests/backDesign2.png"
+            src="/assests/backDesign2.png"
             alt=""
             aria-hidden="true"
             loading="lazy"
@@ -88,7 +88,7 @@ function About() {
           />
           <img
             className="about__decor about__decor--3"
-            src="src/assests/backDesign3.png"
+            src="/assests/backDesign3.png"
             alt=""
             aria-hidden="true"
             loading="lazy"
@@ -96,7 +96,7 @@ function About() {
           />
           <img
             className="about__decor about__decor--4"
-            src="src/assests/backDesign4.png"
+            src="/assests/backDesign4.png"
             alt=""
             aria-hidden="true"
             loading="lazy"
@@ -104,7 +104,7 @@ function About() {
           />
           <img
             className="about__decor about__decor--5"
-            src="src/assests/backDesign5.png"
+            src="/assests/backDesign5.png"
             alt=""
             aria-hidden="true"
             loading="lazy"
@@ -112,7 +112,7 @@ function About() {
           />
           <img
             className="about__decor about__decor--6"
-            src="src/assests/backDesign6.png"
+            src="/assests/backDesign6.png"
             alt=""
             aria-hidden="true"
             loading="lazy"
@@ -120,7 +120,7 @@ function About() {
           />
           <img
             className="about__decor about__decor--7"
-            src="src/assests/backDesign2.png"
+            src="/assests/backDesign2.png"
             alt=""
             aria-hidden="true"
             loading="lazy"

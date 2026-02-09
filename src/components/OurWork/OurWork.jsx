@@ -8,29 +8,29 @@ import Navbar from "../Navbar/Navbar.jsx";
 const showcaseItems = [
   {
     title: "Chess Game Creator",
-    image: "src/assests/chess.png",
+    image: "/assests/chess.png",
   },
   {
     title: "United State",
-    image: "src/assests/unitedState.png",
+    image: "/assests/unitedState.png",
   },
   {
     title: "Halloween",
-    image: "src/assests/halloween.png",
+    image: "/assests/halloween.png",
   },
   {
     title: "Critters' Breakout!",
-    image: "src/assests/critters.png",
+    image: "/assests/critters.png",
     isWide: true,
   },
 ];
 
 const partnerLogos = [
-  { name: "Figma", image: "src/assests/figma.png" },
-  { name: "Unreal", image: "src/assests/unreal.png" },
-  { name: "Rive", image: "src/assests/rive.png" },
-  { name: "Unity", image: "src/assests/unity.png" },
-  { name: "Photoshop", image: "src/assests/ps.png" },
+  { name: "Figma", image: "/assests/figma.png" },
+  { name: "Unreal", image: "/assests/unreal.png" },
+  { name: "Rive", image: "/assests/rive.png" },
+  { name: "Unity", image: "/assests/unity.png" },
+  { name: "Photoshop", image: "/assests/ps.png" },
 ];
 
 function OurWork() {

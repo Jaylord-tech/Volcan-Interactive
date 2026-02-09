@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 import "./Featured.css";
 
 const slides = [
-  { title: "United State", image: "src/assests/unitedState.png" },
-  { title: "Chess Game Creator", image: "src/assests/chess.png" },
-  { title: "Halloween", image: "src/assests/halloween.png" },
-  { title: "Critters Breakout", image: "src/assests/critters.png" },
+  { title: "United State", image: "/assests/unitedState.png" },
+  { title: "Chess Game Creator", image: "/assests/chess.png" },
+  { title: "Halloween", image: "/assests/halloween.png" },
+  { title: "Critters Breakout", image: "/assests/critters.png" },
 ];
 
 function Featured() {

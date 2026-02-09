@@ -5,11 +5,11 @@ import { getContactOffset, scrollToContact } from "../../utils/scrollToContact.j
 import "./Hero.css";
 
 const heroImages = [
-  "src/assests/heroImg1.png",
-  "src/assests/heroImg2.png",
-  "src/assests/heroImg3.png",
-  "src/assests/heroImg4.png",
-  "src/assests/heroImg5.png",
+  "/assests/heroImg1.png",
+  "/assests/heroImg2.png",
+  "/assests/heroImg3.png",
+  "/assests/heroImg4.png",
+  "/assests/heroImg5.png",
 ];
 
 
