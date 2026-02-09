@@ -21,7 +21,7 @@ const showcaseItems = [
   {
     title: "Critters' Breakout!",
     image: "/Volcan-Interactive/assests/critters.png",
-    isWide: true,
+    isWide: false,
   },
 ];
 

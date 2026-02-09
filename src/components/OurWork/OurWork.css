@@ -159,11 +159,6 @@
 }
 
 
-.ourwork__card--wide {
-  grid-column: 2 / span 1;
-  height: 180px;
-}
-
 .ourwork__card-image {
   height: 100%;
   width: 100%;
@@ -270,10 +265,6 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .ourwork__card--wide {
-    grid-column: 1 / span 2;
-  }
-
   .ourwork__partners {
     grid-template-columns: repeat(3, auto);
     gap: 28px;
@@ -293,9 +284,6 @@
     grid-template-columns: 1fr;
   }
 
-  .ourwork__card--wide {
-    grid-column: auto;
-  }
 
   .ourwork__partners {
     grid-template-columns: repeat(2, auto);
