@@ -3,8 +3,8 @@
   border-bottom: 1px solid #ff7418;
   padding-top: 0;
   padding-bottom: 0;
-  position: fixed;
-  top: 0;
+  position: relative;
+  top: auto;
   z-index: 10;
   background: #000000;
   backdrop-filter: blur(6px);
@@ -322,6 +322,11 @@
 }
 
 @media (max-width: 640px) {
+  .hero__nav {
+    position: fixed;
+    top: 0;
+  }
+
   .hero__nav-inner {
     height: 68px;
     grid-template-columns: auto auto auto;
