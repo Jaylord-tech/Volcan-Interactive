@@ -14,26 +14,26 @@ const serviceCategories = [
 const services = [
   {
     title: "Game UI/UX Design",
-    video: "/assests/service1.mp4",
-    poster: "/assests/service1.png",
+    video: "/Volcan-Interactive/assests/service1.mp4",
+    poster: "/Volcan-Interactive/assests/service1.png",
     copy: "We design clear, intuitive, and visually consistent game interfaces that enhance player experience and support gameplay. This includes menus, HUDs, overlays, and settings screens, all crafted to communicate information effectively while matching your game’s style and tone. Our focus is on usability, accessibility, and player flow, making sure the UI feels natural to use and never gets in the way of the game.",
   },
   {
     title: "Game Engine UI Implementation",
-    video: "/assests/service2.mp4",
-    poster: "/assests/service2.png",
+    video: "/Volcan-Interactive/assests/service2.mp4",
+    poster: "/Volcan-Interactive/assests/service2.png",
     copy: "We implement UI systems directly inside Unreal Engine using UMG, Common UI, and Blueprint integration. Our approach ensures that designs translate accurately into functional, scalable, and maintainable UI systems. We build interfaces that work seamlessly across input types, resolutions, and platforms, and that integrate cleanly with gameplay logic and data.",
   },
   {
     title: "Design Motion & VFX",
-    video: "/assests/service3.mp4",
-    poster: "/assests/service3.png",
+    video: "/Volcan-Interactive/assests/service3.mp4",
+    poster: "/Volcan-Interactive/assests/service3.png",
     copy: "We enhance interfaces with motion, transitions, and visual feedback that make interactions feel responsive and engaging. From subtle animations to expressive feedback moments, motion is used to guide player attention, reinforce actions, and add a layer of polish that elevates the overall experience without overwhelming the user.",
   },
   {
     title: "UI Optimization and Consultancy",
-    video: "/assests/service4.mp4",
-    poster: "/assests/service4.png",
+    video: "/Volcan-Interactive/assests/service4.mp4",
+    poster: "/Volcan-Interactive/assests/service4.png",
     copy: "We review, refine, and optimize existing interfaces to improve usability, visual clarity, and performance. This includes identifying UX issues, simplifying complex flows, reducing visual clutter, and optimizing for real-time performance. Whether it’s a light polish or a full UI pass, we help bring your interface up to production quality.",
   },
 ];

@@ -8,29 +8,29 @@ import Navbar from "../Navbar/Navbar.jsx";
 const showcaseItems = [
   {
     title: "Chess Game Creator",
-    image: "/assests/chess.png",
+    image: "/Volcan-Interactive/assests/chess.png",
   },
   {
     title: "United State",
-    image: "/assests/unitedState.png",
+    image: "/Volcan-Interactive/assests/unitedState.png",
   },
   {
     title: "Halloween",
-    image: "/assests/halloween.png",
+    image: "/Volcan-Interactive/assests/halloween.png",
   },
   {
     title: "Critters' Breakout!",
-    image: "/assests/critters.png",
+    image: "/Volcan-Interactive/assests/critters.png",
     isWide: true,
   },
 ];
 
 const partnerLogos = [
-  { name: "Figma", image: "/assests/figma.png" },
-  { name: "Unreal", image: "/assests/unreal.png" },
-  { name: "Rive", image: "/assests/rive.png" },
-  { name: "Unity", image: "/assests/unity.png" },
-  { name: "Photoshop", image: "/assests/ps.png" },
+  { name: "Figma", image: "/Volcan-Interactive/assests/figma.png" },
+  { name: "Unreal", image: "/Volcan-Interactive/assests/unreal.png" },
+  { name: "Rive", image: "/Volcan-Interactive/assests/rive.png" },
+  { name: "Unity", image: "/Volcan-Interactive/assests/unity.png" },
+  { name: "Photoshop", image: "/Volcan-Interactive/assests/ps.png" },
 ];
 
 function OurWork() {

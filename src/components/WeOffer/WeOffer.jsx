@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 import "./WeOffer.css";
 
 const offerCards = [
-  { title: "Game UI/UX Design", image: "/assests/weoffer1.png" },
-  { title: "Game Engine UI Implementation", image: "/assests/weOffer2.png" },
-  { title: "Motion & VFX UI", image: "/assests/weOffer3.png" },
-  { title: "UI Optimization & Consultancy", image: "/assests/weOffer4.png" },
+  { title: "Game UI/UX Design", image: "/Volcan-Interactive/assests/weoffer1.png" },
+  { title: "Game Engine UI Implementation", image: "/Volcan-Interactive/assests/weOffer2.png" },
+  { title: "Motion & VFX UI", image: "/Volcan-Interactive/assests/weOffer3.png" },
+  { title: "UI Optimization & Consultancy", image: "/Volcan-Interactive/assests/weOffer4.png" },
 ];
 
 function WeOffer() {

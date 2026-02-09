@@ -5,7 +5,7 @@
 
 .services-page__hero {
   min-height: clamp(360px, 55vw, 620px);
-  background: #000 url("/assests/serviceBackground.png") center top/cover no-repeat;
+  background: #000 url("/Volcan-Interactive/assests/serviceBackground.png") center top/cover no-repeat;
   position: relative;
   filter: brightness(1.12);
 }
@@ -73,7 +73,7 @@
   font-size: clamp(10px, 1vw, 12px);
   text-align: center;
   position: relative;
-  background: url("/assests/serviceDesign.png") center/cover no-repeat;
+  background: url("/Volcan-Interactive/assests/serviceDesign.png") center/cover no-repeat;
   border-radius: 14px;
   overflow: hidden;
 }
@@ -88,7 +88,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: url("/assests/serviceDesign.png") center/cover no-repeat;
+  background: url("/Volcan-Interactive/assests/serviceDesign.png") center/cover no-repeat;
   opacity: 0.9;
   z-index: 0;
   margin-bottom: 30px;
