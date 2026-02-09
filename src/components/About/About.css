@@ -324,15 +324,29 @@
     grid-template-columns: 1fr;
   }
 
-  .about__story-grid article,
-  .about__story-grid article:last-child {
-    text-align: center;
+  .about__story-grid article {
     margin-top: 0;
+  }
+
+  .about__story-grid article:first-child {
+    text-align: left;
+  }
+
+  .about__story-grid article:last-child {
+    text-align: right;
   }
 
   .about__story-grid article p:last-child,
   .about__story-grid article:last-child p:last-child {
-    margin: 0 auto;
+    margin: 0;
+  }
+
+  .about__story-grid article:first-child p:last-child {
+    margin-right: auto;
+  }
+
+  .about__story-grid article:last-child p:last-child {
+    margin-left: auto;
   }
 
   .about__decor {
