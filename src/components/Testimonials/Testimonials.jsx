@@ -42,7 +42,7 @@ function Testimonials() {
         </div>
         <div className="testimonials__image reveal-on-scroll reveal-right">
           <img
-            src="/src/assests/grave.png"
+            src="src/assests/grave.png"
             alt="Grave ornament"
             loading="lazy"
             decoding="async"

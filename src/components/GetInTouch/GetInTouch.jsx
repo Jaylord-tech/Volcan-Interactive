@@ -46,7 +46,7 @@ function GetInTouch() {
       <div className="contact__content">
         <div
           className="contact__image reveal-on-scroll reveal-left"
-          style={{ backgroundImage: "url(/src/assests/getInTouch.png)" }}
+          style={{ backgroundImage: "url(src/assests/getInTouch.png)" }}
           aria-hidden="true"
         />
 

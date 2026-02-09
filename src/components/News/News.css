@@ -1,5 +1,5 @@
 .news {
-  background: #050505 url("/src/assests/newsBackground.png") center/cover no-repeat;
+  background: #050505 url("src/assests/newsBackground.png") center/cover no-repeat;
   min-height: 100vh;
   padding: 72px 16px 80px;
   display: flex;

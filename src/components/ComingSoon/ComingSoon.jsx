@@ -39,7 +39,7 @@ function ComingSoon() {
         </div>
         <img
           className="coming-soon__side"
-          src="/src/assests/comingSoonSideImg.png"
+          src="src/assests/comingSoonSideImg.png"
           alt=""
           aria-hidden="true"
           loading="lazy"
@@ -47,7 +47,7 @@ function ComingSoon() {
         />
         <img
           className="coming-soon__hero reveal-on-scroll reveal-right"
-          src="/src/assests/comingSoonImg.png"
+          src="src/assests/comingSoonImg.png"
           alt="Coming soon ornament"
           loading="lazy"
           decoding="async"

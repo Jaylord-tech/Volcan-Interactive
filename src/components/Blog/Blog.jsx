@@ -47,7 +47,7 @@ function Blog() {
         <section className="blog__hero reveal reveal-up">
           <img
             className="blog__hero-image"
-            src="/src/assests/blogBackground.png"
+            src="src/assests/blogBackground.png"
             alt="Halloween chess game creator"
             loading="eager"
             decoding="async"
@@ -55,7 +55,7 @@ function Blog() {
           />
           <img
             className="blog__hero-design"
-            src="/src/assests/blogDesign1.png"
+            src="src/assests/blogDesign1.png"
             alt=""
             aria-hidden="true"
             loading="eager"
@@ -63,7 +63,7 @@ function Blog() {
           />
           <img
             className="blog__hero-design-bottom"
-            src="/src/assests/blogDesign2.png"
+            src="src/assests/blogDesign2.png"
             alt=""
             aria-hidden="true"
             loading="eager"
@@ -75,7 +75,7 @@ function Blog() {
           <div className="blog__copy">
             <img
               className="blog__title-image reveal-on-scroll reveal-left"
-              src="/src/assests/halloweenText.png"
+              src="src/assests/halloweenText.png"
               alt="Halloween"
               loading="lazy"
               decoding="async"
@@ -101,7 +101,7 @@ function Blog() {
               className={`reveal-on-scroll reveal-right${
                 mainRevealed ? " is-visible" : ""
               }`}
-              src="/src/assests/blogMain.png"
+              src="src/assests/blogMain.png"
               alt="Halloween main piece"
               loading="lazy"
               decoding="async"
@@ -114,28 +114,28 @@ function Blog() {
             <div className="blog__thumbs">
               <img
                 className="reveal-on-scroll reveal-left reveal-delay-3"
-                src="/src/assests/blogImg4.png"
+                src="src/assests/blogImg4.png"
                 alt="Halloween character 4"
                 loading="lazy"
                 decoding="async"
               />
               <img
                 className="reveal-on-scroll reveal-left reveal-delay-2"
-                src="/src/assests/blogImg3.png"
+                src="src/assests/blogImg3.png"
                 alt="Halloween character 3"
                 loading="lazy"
                 decoding="async"
               />
               <img
                 className="reveal-on-scroll reveal-left reveal-delay-1"
-                src="/src/assests/blogImg2.png"
+                src="src/assests/blogImg2.png"
                 alt="Halloween character 2"
                 loading="lazy"
                 decoding="async"
               />
               <img
                 className="reveal-on-scroll reveal-left"
-                src="/src/assests/blogImg1.png"
+                src="src/assests/blogImg1.png"
                 alt="Halloween character 1"
                 loading="lazy"
                 decoding="async"
@@ -152,7 +152,7 @@ function Blog() {
           <div className="blog__gallery-right">
             <img
               className="reveal-on-scroll reveal-right"
-              src="/src/assests/blogBackground.png"
+              src="src/assests/blogBackground.png"
               alt="Halloween project cover"
               loading="lazy"
               decoding="async"

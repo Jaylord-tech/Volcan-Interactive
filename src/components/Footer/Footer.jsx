@@ -5,7 +5,7 @@ function Footer() {
     <footer className="footer">
       <div className="footer__brand">
         <img
-          src="/src/assests/logo.png"
+          src="src/assests/logo.png"
           alt="Volcan Interactive"
           loading="lazy"
           decoding="async"
