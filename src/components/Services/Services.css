@@ -8,6 +8,27 @@
   background: #000 url("/Volcan-Interactive/assests/serviceBackground.png") center top/cover no-repeat;
   position: relative;
   filter: brightness(1.12);
+  z-index: 0;
+}
+
+.services-page__hero-tail {
+  width: 100%;
+  height: clamp(90px, 14vw, 160px);
+  background: url("/Volcan-Interactive/assests/serviceDesign.png") center/cover no-repeat;
+  margin-top: -60px;
+  margin-bottom: 45px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.services-page__tail-overlay {
+  width: min(1240px, 100%);
+  padding: 0 clamp(16px, 5vw, 72px);
+  position: relative;
+  z-index: 2;
 }
 
 .services-page__overlay {
@@ -60,9 +81,9 @@
 }
 
 .services-page__categories {
-  max-width: 1240px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: clamp(20px, 4vw, 40px) clamp(16px, 5vw, 72px) clamp(28px, 4vw, 42px);
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -73,33 +94,13 @@
   font-size: clamp(10px, 1vw, 12px);
   text-align: center;
   position: relative;
-  background: url("/Volcan-Interactive/assests/serviceDesign.png") center/cover no-repeat;
-  border-radius: 14px;
-  overflow: hidden;
+  z-index: 3;
 }
 
 .services-page__categories span {
   white-space: nowrap;
   position: relative;
   z-index: 1;
-}
-
-.services-page__categories::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("/Volcan-Interactive/assests/serviceDesign.png") center/cover no-repeat;
-  opacity: 0.9;
-  z-index: 0;
-  margin-bottom: 30px;
-}
-
-.services-page__categories::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  z-index: 0;
 }
 
 .services-page__details {

@@ -111,11 +111,15 @@ function Services() {
           </div>
         </section>
 
-        <section className="services-page__categories reveal-on-scroll">
-          {serviceCategories.map((item) => (
-            <span key={item}>{item}</span>
-          ))}
-        </section>
+        <div className="services-page__hero-tail">
+          <div className="services-page__tail-overlay">
+            <section className="services-page__categories reveal-on-scroll">
+              {serviceCategories.map((item) => (
+                <span key={item}>{item}</span>
+              ))}
+            </section>
+          </div>
+        </div>
 
         <section className="services-page__details">
           {services.map((service, index) => (
