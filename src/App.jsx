@@ -6,6 +6,7 @@ import NewsPage from "./pages/NewsPage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import ServicesPage from "./pages/ServicesPage.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
+import GlobalSectionReveal from "./components/GlobalSectionReveal.jsx";
 import "./App.css";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
     <div className="app">
       <BrowserRouter basename={import.meta.env.BASE_URL}>
         <ScrollToTop />
+        <GlobalSectionReveal />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<ServicesPage />} />
