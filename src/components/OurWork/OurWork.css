@@ -300,6 +300,12 @@
 
 }
 
+@media (min-width: 641px) {
+  .ourwork {
+    padding-top: 0;
+  }
+}
+
 @media (max-width: 420px) {
   .ourwork__partners {
     grid-template-columns: 1fr;

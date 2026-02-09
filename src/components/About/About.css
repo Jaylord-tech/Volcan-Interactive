@@ -438,6 +438,12 @@
   }
 }
 
+@media (min-width: 641px) {
+  .about {
+    padding-top: 0;
+  }
+}
+
 @keyframes about-pan {
   0%,
   100% {

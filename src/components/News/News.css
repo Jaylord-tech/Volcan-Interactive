@@ -99,3 +99,9 @@
     letter-spacing: 0.12em;
   }
 }
+
+@media (min-width: 641px) {
+  .news {
+    padding-top: 0;
+  }
+}
