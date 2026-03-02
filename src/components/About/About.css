@@ -6,7 +6,7 @@
 }
 
 .about__intro {
-  background: #ececec url("/Volcan-Interactive/assests/aboutBackground1.png") center/cover no-repeat;
+  background: #ececec url("/Volcan-Interactive/assests/aboutBackground1.webp") center/cover no-repeat;
   padding: clamp(76px, 10vw, 130px) clamp(28px, 6vw, 72px) clamp(72px, 10vw, 124px);
   text-align: left;
   color: #262626;
@@ -360,7 +360,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: url("/Volcan-Interactive/assests/button.png") center / 100% 100% no-repeat;
+  background: url("/Volcan-Interactive/assests/button.webp") center / 100% 100% no-repeat;
 }
 
 .about__cta::after {

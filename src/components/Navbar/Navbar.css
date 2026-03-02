@@ -185,7 +185,7 @@
   background-repeat: no-repeat;
   background-position: center;
   z-index: 0;
-  background-image: url("/Volcan-Interactive/assests/contactButton.png");
+  background-image: url("/Volcan-Interactive/assests/contactButton.webp");
   transition: opacity 200ms ease;
 }
 
@@ -202,7 +202,7 @@
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url("/Volcan-Interactive/assests/button.png");
+  background-image: url("/Volcan-Interactive/assests/button.webp");
   opacity: 0;
   transition: opacity 200ms ease;
   z-index: 0;

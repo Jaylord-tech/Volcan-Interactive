@@ -7,23 +7,23 @@ function Critters() {
   ];
   const crittersGalleryLoopImages = [
     {
-      src: "/Volcan-Interactive/assests/crittersBackground.png",
+      src: "/Volcan-Interactive/assests/crittersBackground.webp",
       srcMobile: "/Volcan-Interactive/assests/crittersBackground-mobile.webp",
     },
     {
-      src: "/Volcan-Interactive/assests/critters1.png",
+      src: "/Volcan-Interactive/assests/critters1.webp",
       srcMobile: "/Volcan-Interactive/assests/critters1-mobile.webp",
     },
     {
-      src: "/Volcan-Interactive/assests/critters2.png",
+      src: "/Volcan-Interactive/assests/critters2.webp",
       srcMobile: "/Volcan-Interactive/assests/critters2-mobile.webp",
     },
     {
-      src: "/Volcan-Interactive/assests/critters3.png",
+      src: "/Volcan-Interactive/assests/critters3.webp",
       srcMobile: "/Volcan-Interactive/assests/critters3-mobile.webp",
     },
     {
-      src: "/Volcan-Interactive/assests/critters4.png",
+      src: "/Volcan-Interactive/assests/critters4.webp",
       srcMobile: "/Volcan-Interactive/assests/critters4-mobile.webp",
     },
   ];
@@ -31,11 +31,11 @@ function Critters() {
   return (
     <Blog
       sectionId="critters"
-      heroImage="/Volcan-Interactive/assests/crittersBackground.png"
+      heroImage="/Volcan-Interactive/assests/crittersBackground.webp"
       heroImageMobile="/Volcan-Interactive/assests/crittersBackground-mobile.webp"
-      titleImage="/Volcan-Interactive/assests/crittersTextImg.png"
-      mainImage="/Volcan-Interactive/assests/Rabbit.png"
-      galleryImage="/Volcan-Interactive/assests/crittersBackground.png"
+      titleImage="/Volcan-Interactive/assests/crittersTextImg.webp"
+      mainImage="/Volcan-Interactive/assests/Rabbit.webp"
+      galleryImage="/Volcan-Interactive/assests/crittersBackground.webp"
       galleryImageMobile="/Volcan-Interactive/assests/crittersBackground-mobile.webp"
       titleAlt="Critters Breakout"
       mainAlt="Critters rabbit character"

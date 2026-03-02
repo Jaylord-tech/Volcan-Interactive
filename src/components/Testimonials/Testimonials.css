@@ -20,7 +20,7 @@
   right: 0;
   top: 0;
   height: 553px;
-  background: url("/Volcan-Interactive/assests/deliver.png") center/cover
+  background: url("/Volcan-Interactive/assests/deliver.webp") center/cover
     no-repeat;
   opacity: 0.1;
   pointer-events: none;
@@ -90,7 +90,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: url("/Volcan-Interactive/assests/outLine.png") center/100% 100%
+  background: url("/Volcan-Interactive/assests/outLine.webp") center/100% 100%
     no-repeat;
   pointer-events: none;
   z-index: 0;

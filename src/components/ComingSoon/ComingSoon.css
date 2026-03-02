@@ -1,5 +1,5 @@
 .coming-soon {
-  background: #000000 url("/Volcan-Interactive/assests/background.png") center/cover
+  background: #000000 url("/Volcan-Interactive/assests/background.webp") center/cover
     no-repeat;
   padding: clamp(64px, 8vw, 110px) clamp(16px, 5vw, 64px);
   box-shadow: 0 0 0 100vmax #000000;
@@ -10,7 +10,7 @@
   width: min(100%, 980px);
   aspect-ratio: 1840 / 973;
   margin: 0 auto;
-  background: #0b0b0b url("/Volcan-Interactive/assests/background2.png") center/contain
+  background: #0b0b0b url("/Volcan-Interactive/assests/background2.webp") center/contain
     no-repeat;
   border: 1px solid rgba(255, 255, 255, 0.15);
   overflow: hidden;

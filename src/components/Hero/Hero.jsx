@@ -4,11 +4,11 @@ import { getContactOffset, scrollToContact } from "../../utils/scrollToContact.j
 import "./Hero.css";
 
 const heroImages = [
-  "/Volcan-Interactive/assests/heroImg1.png",
-  "/Volcan-Interactive/assests/heroImg2.png",
-  "/Volcan-Interactive/assests/heroImg3.png",
-  "/Volcan-Interactive/assests/heroImg4.png",
-  "/Volcan-Interactive/assests/heroImg5.png",
+  "/Volcan-Interactive/assests/heroImg1.webp",
+  "/Volcan-Interactive/assests/heroImg2.webp",
+  "/Volcan-Interactive/assests/heroImg3.webp",
+  "/Volcan-Interactive/assests/heroImg4.webp",
+  "/Volcan-Interactive/assests/heroImg5.webp",
 ];
 
 

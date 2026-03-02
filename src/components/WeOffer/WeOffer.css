@@ -202,7 +202,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("/Volcan-Interactive/assests/button.png");
+  background-image: url("/Volcan-Interactive/assests/button.webp");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -237,8 +237,8 @@
     font-size: 14px;
     line-height: 24px;
     padding: 0 4px;
-    text-align: justify;
-    text-justify: inter-word;
+    text-align: center;
+    word-spacing: normal;
   }
 
   .offer__copy br {
@@ -248,8 +248,8 @@
   .offer__note {
     font-size: 16px;
     line-height: 26px;
-    text-align: justify;
-    text-justify: inter-word;
+    text-align: center;
+    word-spacing: normal;
   }
 
   .offer__grid {

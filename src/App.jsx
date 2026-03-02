@@ -11,6 +11,7 @@ import ChessPage from "./pages/ChessPage.jsx";
 import UnitedStatePage from "./pages/UnitedStatePage.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import GlobalSectionReveal from "./components/GlobalSectionReveal.jsx";
+import ImageWarmup from "./components/ImageWarmup.jsx";
 import "./App.css";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <BrowserRouter basename={import.meta.env.BASE_URL}>
         <ScrollToTop />
         <GlobalSectionReveal />
+        <ImageWarmup />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<ServicesPage />} />

@@ -8,29 +8,29 @@ import GetInTouch from "../GetInTouch/GetInTouch.jsx";
 const showcaseItems = [
   {
     title: "Chess Game Creator",
-    image: "/Volcan-Interactive/assests/chess.png",
+    image: "/Volcan-Interactive/assests/chess.webp",
   },
   {
     title: "Halloween",
-    image: "/Volcan-Interactive/assests/halloween.png",
+    image: "/Volcan-Interactive/assests/halloween.webp",
   },
   {
     title: "Critters' Breakout!",
-    image: "/Volcan-Interactive/assests/critters.png",
+    image: "/Volcan-Interactive/assests/critters.webp",
     isWide: false,
   },
   {
     title: "United State",
-    image: "/Volcan-Interactive/assests/unitedState.png",
+    image: "/Volcan-Interactive/assests/unitedState.webp",
   },
 ];
 
 const partnerLogos = [
-  { name: "Figma", image: "/Volcan-Interactive/assests/figma.png" },
-  { name: "Unreal", image: "/Volcan-Interactive/assests/unreal.png" },
-  { name: "Rive", image: "/Volcan-Interactive/assests/rive.png" },
-  { name: "Unity", image: "/Volcan-Interactive/assests/unity.png" },
-  { name: "Photoshop", image: "/Volcan-Interactive/assests/ps.png" },
+  { name: "Figma", image: "/Volcan-Interactive/assests/figma.webp" },
+  { name: "Unreal", image: "/Volcan-Interactive/assests/unreal.webp" },
+  { name: "Rive", image: "/Volcan-Interactive/assests/rive.webp" },
+  { name: "Unity", image: "/Volcan-Interactive/assests/unity.webp" },
+  { name: "Photoshop", image: "/Volcan-Interactive/assests/ps.webp" },
 ];
 
 function OurWork() {
