@@ -35,6 +35,7 @@ const defaultGalleryThumbs = [
 function Blog({
   sectionId = "halloween",
   heroImage = "/Volcan-Interactive/assests/blogBackground.png",
+  heroImageMobile = "",
   titleImage = "/Volcan-Interactive/assests/halloweenText.png",
   titleText = "",
   titleTextClassName = "",
@@ -43,6 +44,7 @@ function Blog({
   titleSubtextPlacement = "inline",
   mainImage = "/Volcan-Interactive/assests/blogMain.png",
   galleryImage = "/Volcan-Interactive/assests/blogBackground.png",
+  galleryImageMobile = "",
   titleAlt = "Halloween",
   mainAlt = "Halloween main piece",
   galleryAlt = "Halloween project cover",
@@ -62,13 +64,19 @@ function Blog({
   const [galleryNoTransition, setGalleryNoTransition] = useState(false);
 
   const gallerySlides = useMemo(() => {
-    const sourceImages = galleryLoopImages.length ? galleryLoopImages : [galleryImage];
+    const sourceImages = galleryLoopImages.length
+      ? galleryLoopImages
+      : [{ src: galleryImage, srcMobile: galleryImageMobile }];
     return sourceImages.map((item, index) =>
       typeof item === "string"
-        ? { src: item, alt: `${galleryAlt} ${index + 1}` }
-        : { src: item.src, alt: item.alt || `${galleryAlt} ${index + 1}` }
+        ? { src: item, srcMobile: "", alt: `${galleryAlt} ${index + 1}` }
+        : {
+            src: item.src,
+            srcMobile: item.srcMobile || "",
+            alt: item.alt || `${galleryAlt} ${index + 1}`,
+          }
     );
-  }, [galleryLoopImages, galleryImage, galleryAlt]);
+  }, [galleryLoopImages, galleryImage, galleryImageMobile, galleryAlt]);
 
   const galleryLoopSlides = useMemo(() => {
     if (gallerySlides.length <= 1) return gallerySlides;
@@ -161,14 +169,19 @@ function Blog({
       <Navbar hideBottomLine />
       <main ref={sectionRef} className="blog">
         <section className="blog__hero reveal reveal-up">
-          <img
-            className="blog__hero-image"
-            src={heroImage}
-            alt={galleryAlt}
-            loading="eager"
-            decoding="async"
-            fetchpriority="high"
-          />
+          <picture className="blog__hero-image-wrap">
+            {heroImageMobile ? (
+              <source media="(max-width: 960px)" srcSet={heroImageMobile} type="image/webp" />
+            ) : null}
+            <img
+              className="blog__hero-image"
+              src={heroImage}
+              alt={galleryAlt}
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
+            />
+          </picture>
           <img
             className="blog__hero-design"
             src="/Volcan-Interactive/assests/blogDesign1.png"
@@ -283,7 +296,12 @@ function Blog({
             >
               {galleryLoopSlides.map((slide, index) => (
                 <div className="blog__gallery-slide" key={`${sectionId}-slide-${index}`}>
-                  <img src={slide.src} alt={slide.alt} loading="lazy" decoding="async" />
+                  <picture>
+                    {slide.srcMobile ? (
+                      <source media="(max-width: 960px)" srcSet={slide.srcMobile} type="image/webp" />
+                    ) : null}
+                    <img src={slide.src} alt={slide.alt} loading="lazy" decoding="async" />
+                  </picture>
                 </div>
               ))}
             </div>

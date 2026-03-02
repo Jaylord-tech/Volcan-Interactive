@@ -3,7 +3,10 @@ import "./UnitedState.css";
 
 function UnitedState() {
   const unitedStateGalleryLoopImages = [
-    "/Volcan-Interactive/assests/unitedBackround.png",
+    {
+      src: "/Volcan-Interactive/assests/unitedBackround.png",
+      srcMobile: "/Volcan-Interactive/assests/unitedBackround-mobile.webp",
+    },
   ];
   const unitedStateCopy = [
     "Full case studies are currently in production. In the meantime, selected work is available on request.",
@@ -13,8 +16,10 @@ function UnitedState() {
     <Blog
       sectionId="unitedstate"
       heroImage="/Volcan-Interactive/assests/unitedBackround.png"
+      heroImageMobile="/Volcan-Interactive/assests/unitedBackround-mobile.webp"
       titleImage="/Volcan-Interactive/assests/unitedText.png"
       galleryImage="/Volcan-Interactive/assests/unitedBackround.png"
+      galleryImageMobile="/Volcan-Interactive/assests/unitedBackround-mobile.webp"
       titleAlt="United State"
       mainAlt="United State artwork"
       galleryAlt="United State project cover"

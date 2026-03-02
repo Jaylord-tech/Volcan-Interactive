@@ -237,15 +237,41 @@
     font-size: 14px;
     line-height: 24px;
     padding: 0 4px;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
+  .offer__copy br {
+    display: none;
   }
 
   .offer__note {
     font-size: 16px;
     line-height: 26px;
+    text-align: justify;
+    text-justify: inter-word;
   }
 
   .offer__grid {
     grid-template-columns: 1fr;
     justify-items: center;
+  }
+
+  .offer__card {
+    max-width: min(240px, 88vw);
+  }
+
+  .offer__cta {
+    width: min(210px, 82vw);
+    aspect-ratio: 210 / 44;
+    font-size: clamp(10px, 3.4vw, 12px);
+    line-height: 1.2;
+    letter-spacing: 0.08em;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  .offer__cta span {
+    white-space: nowrap;
   }
 }

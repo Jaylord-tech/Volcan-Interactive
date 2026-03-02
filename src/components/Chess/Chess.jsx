@@ -30,22 +30,42 @@ function Chess() {
     },
   ];
   const chessGalleryLoopImages = [
-    "/Volcan-Interactive/assests/chessBackground.png",
-    "/Volcan-Interactive/assests/chessGame1.png",
-    "/Volcan-Interactive/assests/chessGame2.png",
-    "/Volcan-Interactive/assests/chessGame3.png",
-    "/Volcan-Interactive/assests/chessGame4.png",
-    "/Volcan-Interactive/assests/chessGame5.png",
+    {
+      src: "/Volcan-Interactive/assests/chessBackground.png",
+      srcMobile: "/Volcan-Interactive/assests/chessBackground-mobile.webp",
+    },
+    {
+      src: "/Volcan-Interactive/assests/chessGame1.png",
+      srcMobile: "/Volcan-Interactive/assests/chessGame1-mobile.webp",
+    },
+    {
+      src: "/Volcan-Interactive/assests/chessGame2.png",
+      srcMobile: "/Volcan-Interactive/assests/chessGame2-mobile.webp",
+    },
+    {
+      src: "/Volcan-Interactive/assests/chessGame3.png",
+      srcMobile: "/Volcan-Interactive/assests/chessGame3-mobile.webp",
+    },
+    {
+      src: "/Volcan-Interactive/assests/chessGame4.png",
+      srcMobile: "/Volcan-Interactive/assests/chessGame4-mobile.webp",
+    },
+    {
+      src: "/Volcan-Interactive/assests/chessGame5.png",
+      srcMobile: "/Volcan-Interactive/assests/chessGame5-mobile.webp",
+    },
   ];
 
   return (
     <Blog
       sectionId="chess"
       heroImage="/Volcan-Interactive/assests/chessBackground.png"
+      heroImageMobile="/Volcan-Interactive/assests/chessBackground-mobile.webp"
       titleText="CHESS GAME CREATOR"
       titleTextClassName="chess__title-text"
       mainImage="/Volcan-Interactive/assests/kingChess.png"
       galleryImage="/Volcan-Interactive/assests/chessBackground.png"
+      galleryImageMobile="/Volcan-Interactive/assests/chessBackground-mobile.webp"
       titleAlt="Chess Game Creator"
       mainAlt="Chess king character"
       galleryAlt="Chess project cover"

@@ -21,6 +21,10 @@
   transform: none;
 }
 
+.blog__hero-image-wrap {
+  display: block;
+}
+
 .blog__hero-design {
   position: absolute;
   left: 0;
