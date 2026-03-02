@@ -60,16 +60,16 @@ function Featured() {
 
   const handleProjectClick = (title) => {
     if (title === "United State") {
-      navigate("/unitedstate#unitedstate");
+      navigate("/unitedstate");
     }
     if (title === "Chess Game Creator") {
-      navigate("/chess#chess");
+      navigate("/chess");
     }
     if (title === "Halloween") {
-      navigate("/blog#halloween");
+      navigate("/blog");
     }
     if (title === "Critters Breakout") {
-      navigate("/critters#critters");
+      navigate("/critters");
     }
   };
 

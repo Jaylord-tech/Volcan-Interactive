@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./OurWork.css";
 import Footer from "../Footer/Footer.jsx";
@@ -35,6 +35,28 @@ const partnerLogos = [
 
 function OurWork() {
   const navigate = useNavigate();
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const elements = section.querySelectorAll(".reveal-on-scroll");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   const handleCardMove = (event) => {
     const card = event.currentTarget;
@@ -80,14 +102,14 @@ function OurWork() {
   return (
     <div className="page">
       <Navbar />
-      <main className="ourwork">
+      <main ref={sectionRef} className="ourwork">
         <div className="ourwork__header">
-          <p className="ourwork__eyebrow reveal reveal-up">Proof of Work</p>
+          <p className="ourwork__eyebrow reveal-on-scroll reveal-up">Proof of Work</p>
         <h1 className="ourwork__title">
-          <span className="reveal reveal-left reveal-delay-1">Full</span>{" "}
-          <span className="reveal reveal-right reveal-delay-2">Featured</span>
+          <span className="reveal-on-scroll reveal-left reveal-delay-1">Full</span>{" "}
+          <span className="reveal-on-scroll reveal-right reveal-delay-2">Featured</span>
         </h1>
-          <div className="ourwork__filters reveal reveal-up reveal-delay-2">
+          <div className="ourwork__filters reveal-on-scroll reveal-up reveal-delay-2">
             <button type="button" className="is-active">All</button>
             <button type="button">PC</button>
             <button type="button">Console</button>
@@ -112,7 +134,7 @@ function OurWork() {
 
           return (
             <article
-              className={`ourwork__card reveal ${revealClass}${
+              className={`ourwork__card reveal-on-scroll ${revealClass}${
                 item.isWide ? " ourwork__card--wide" : ""
               }`}
               key={item.title}
@@ -157,7 +179,7 @@ function OurWork() {
         })}
       </div>
 
-      <div className="ourwork__partners reveal reveal-up">
+      <div className="ourwork__partners reveal-on-scroll reveal-up">
         {partnerLogos.map((logo) => (
           <div className="ourwork__partner" key={logo.name}>
             <img
