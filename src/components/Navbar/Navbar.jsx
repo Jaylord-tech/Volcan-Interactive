@@ -14,6 +14,8 @@ function Navbar({ hideBottomLine = false }) {
     const getScrollY = () =>
       window.pageYOffset || document.documentElement.scrollTop || 0;
     lastScrollYRef.current = Math.max(getScrollY(), 0);
+    const SHOW_ALWAYS_THRESHOLD = 120;
+    const HIDE_ONLY_AFTER = 140;
 
     let ticking = false;
     const handleScroll = () => {
@@ -25,7 +27,7 @@ function Navbar({ hideBottomLine = false }) {
       ticking = true;
       requestAnimationFrame(() => {
         const currentY = Math.max(getScrollY(), 0);
-        if (currentY <= 10) {
+        if (currentY <= SHOW_ALWAYS_THRESHOLD) {
           setShowNav(true);
           lastScrollYRef.current = currentY;
           ticking = false;
@@ -33,7 +35,7 @@ function Navbar({ hideBottomLine = false }) {
         }
 
         const delta = currentY - lastScrollYRef.current;
-        if (delta > 2) {
+        if (delta > 2 && currentY > HIDE_ONLY_AFTER) {
           setShowNav(false);
         } else if (delta < -2) {
           setShowNav(true);
@@ -69,6 +71,7 @@ function Navbar({ hideBottomLine = false }) {
 
   useEffect(() => {
     setIsMenuOpen(false);
+    setShowNav(true);
   }, [location.pathname]);
 
   useEffect(() => {
