@@ -1,5 +1,5 @@
 .coming-soon {
-  background: #000000 url("/Volcan-Interactive/assests/comingSoonBackground.png") center/cover
+  background: #000000 url("/Volcan-Interactive/assests/background.png") center/cover
     no-repeat;
   padding: clamp(64px, 8vw, 110px) clamp(16px, 5vw, 64px);
   box-shadow: 0 0 0 100vmax #000000;
@@ -7,148 +7,63 @@
 }
 
 .coming-soon__frame {
-  background: #0b0b0b url("/Volcan-Interactive/assests/comingSoonInnerB.png") center/cover
+  width: min(100%, 980px);
+  aspect-ratio: 1840 / 973;
+  margin: 0 auto;
+  background: #0b0b0b url("/Volcan-Interactive/assests/background2.png") center/contain
     no-repeat;
   border: 1px solid rgba(255, 255, 255, 0.15);
-  max-width: 980px;
-  margin: 0 auto;
-  padding: clamp(22px, 3.5vw, 42px);
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: clamp(20px, 4vw, 48px);
-  align-items: center;
-  position: relative;
-  overflow: visible;
-  isolation: isolate;
-}
-
-.coming-soon__frame::after {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  border-radius: 6px;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255, 116, 24, 0.25),
-    transparent
-  );
-  opacity: 0.5;
-  pointer-events: none;
-  animation: coming-frame-sheen 12s linear infinite;
-  z-index: 0;
+  overflow: hidden;
 }
 
 .coming-soon__content {
-  color: #f5f5f5;
-  max-width: 520px;
-  margin-top: -38px;
-  position: relative;
-  z-index: 1;
-}
-
-.coming-soon__eyebrow {
-  color: #ff7418;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  font-size: 12px;
-  margin-bottom: 6px;
-}
-
-.coming-soon__content .coming-soon__eyebrow {
-  color: #ff7418;
+  max-width: 980px;
+  margin: 24px auto 0;
+  text-align: center;
 }
 
 .coming-soon__content h2 {
-  text-transform: uppercase;
-  font-size: clamp(26px, 4vw, 44px);
-  margin-bottom: 12px;
-  font-weight: 500;
+  width: min(235px, 100%);
+  height: 55px;
+  max-width: 100%;
+  margin: 0 auto 12px;
+  font-family: "Sk-Modernist";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 55px;
+  color: #ff9b5d;
 }
 
 .coming-soon__content p {
-  color: #d9d9d9;
-  line-height: 1.7;
-  font-size: clamp(13px, 1.4vw, 16px);
-}
-
-.coming-soon__side {
-  position: absolute;
-  left: -18px;
-  bottom: -6px;
-  width: clamp(140px, 24vw, 260px);
-  height: auto;
-  pointer-events: none;
-  z-index: 2;
-  animation: coming-side-float 8s ease-in-out infinite;
-}
-
-.coming-soon__hero {
-  width: min(100%, 320px);
-  justify-self: end;
-  display: block;
-  position: relative;
-  z-index: 1;
-  animation: coming-soon-orbit 7s ease-in-out infinite;
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  font-family: "Sk-Modernist", "Poppins", "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  color: #ffffff;
+  white-space: nowrap;
+  text-align: center;
+  font-size: clamp(11px, 1.35vw, 18px);
 }
 
 @media (max-width: 900px) {
   .coming-soon__frame {
-    grid-template-columns: 1fr;
-    text-align: center;
+    aspect-ratio: 1840 / 973;
   }
 
-  .coming-soon__content {
-    margin: 0 auto;
+  .coming-soon__content p {
+    white-space: normal;
+    font-size: 16px;
+    line-height: 26px;
   }
 
-  .coming-soon__hero {
-    justify-self: center;
-  }
-
-  .coming-soon__side {
-    width: clamp(70px, 22vw, 130px);
-  }
-}
-
-@keyframes coming-frame-sheen {
-  0% {
-    transform: translateX(-120%);
-    opacity: 0;
-  }
-  20% {
-    opacity: 0.6;
-  }
-  100% {
-    transform: translateX(120%);
-    opacity: 0;
-  }
-}
-
-@keyframes coming-side-float {
-  0%,
-  100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(8px, -10px);
-  }
-}
-
-@keyframes coming-soon-orbit {
-  0% {
-    transform: translate(0, -24px) rotate(-2deg);
-  }
-  25% {
-    transform: translate(24px, -6px) rotate(2deg);
-  }
-  50% {
-    transform: translate(6px, 24px) rotate(-1deg);
-  }
-  75% {
-    transform: translate(-24px, 6px) rotate(2deg);
-  }
-  100% {
-    transform: translate(0, -24px) rotate(-2deg);
+  .coming-soon__content h2 {
+    font-size: clamp(24px, 7.5vw, 32px);
+    line-height: 1.2;
+    height: auto;
   }
 }

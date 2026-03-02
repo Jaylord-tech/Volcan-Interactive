@@ -1,6 +1,6 @@
 const CONTACT_OFFSETS = {
-  "/services": -30,
-  default: -90,
+  "/services": 30,
+  default: 90,
 };
 
 export const getContactOffset = (pathname) =>

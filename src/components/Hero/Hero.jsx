@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar.jsx";
 import { getContactOffset, scrollToContact } from "../../utils/scrollToContact.js";
 import "./Hero.css";
@@ -17,6 +17,7 @@ function Hero() {
   const [activeIndex, setActiveIndex] = useState(0);
   const heroRef = useRef(null);
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -43,11 +44,11 @@ function Hero() {
   }, []);
 
   const handleGetInTouch = () => {
-    if (document.getElementById("contact")) {
-      scrollToContact({ offset: getContactOffset("/") });
+    if (pathname === "/") {
+      scrollToContact({ offset: getContactOffset(pathname) });
       return;
     }
-    navigate({ pathname: "/", hash: "#contact" });
+    navigate("/contact");
   };
 
   return (

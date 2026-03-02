@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 import "./WeOffer.css";
 
 const offerCards = [
-  { title: "Game UI/UX Design", image: "/Volcan-Interactive/assests/weoffer1.png" },
-  { title: "Game Engine UI Implementation", image: "/Volcan-Interactive/assests/weOffer2.png" },
-  { title: "Motion & VFX UI", image: "/Volcan-Interactive/assests/weOffer3.png" },
-  { title: "UI Optimization & Consultancy", image: "/Volcan-Interactive/assests/weOffer4.png" },
+  { title: "Game UI/UX Design", image: "/Volcan-Interactive/assests/weOffer11.png" },
+  { title: "Game Engine\nUI Implementation", image: "/Volcan-Interactive/assests/weOffer22.png" },
+  { title: "Motion & VFX UI", image: "/Volcan-Interactive/assests/weOffer33.png" },
+  { title: "UI Optimization\n& Consultancy", image: "/Volcan-Interactive/assests/weOffer44.png" },
 ];
 
 function WeOffer() {
@@ -44,7 +44,9 @@ function WeOffer() {
       </h2>
       <p className="offer__copy reveal-on-scroll">
         End to end Game UI/UX design and in engine implementation, creating intuitive,
-        performance driven interfaces that enhance gameplay and immersion.
+        performance driven interfaces that enhance
+        <br />
+        gameplay and immersion.
       </p>
       <div className="offer__grid">
         {offerCards.map((card, index) => (
@@ -60,6 +62,11 @@ function WeOffer() {
               loading="lazy"
               decoding="async"
             />
+            <div className={`offer__card-label${index === 0 ? " is-active" : ""}`}>
+              {card.title.split("\n").map((line) => (
+                <span key={line}>{line}</span>
+              ))}
+            </div>
           </div>
         ))}
       </div>

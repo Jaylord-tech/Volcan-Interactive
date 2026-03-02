@@ -30,17 +30,15 @@
 }
 
 .news__title {
-  margin: 0;
-  font-family: "Space Grotesk", "Poppins", "Segoe UI", sans-serif;
-  font-size: clamp(24px, 4vw, 40px);
-  line-height: 1.1;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #ff8a35;
-  display: inline-flex;
-  align-items: center;
-  gap: clamp(8px, 2vw, 16px);
-  text-shadow: -0.2px 0 #020202, 0 0.2px #020202, 0.2px 0 #020202, 0 -0.2px #020202;
+  margin: 50px 0 0;
+  font-family: "Vastago Grotesk";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 44px;
+  text-align: center;
+  color: #FF9B5D;
+  display: inline-block;
 }
 
 .news__word {
@@ -61,26 +59,7 @@
 
 .news__zoom {
   display: inline-block;
-  animation: news-zoom 2.4s ease-in-out infinite;
-  animation-delay: var(--news-zoom-delay, 3s);
-  --news-zoom-min: 0.85;
-  --news-zoom-max: 1.2;
-}
-
-.news__word--right .news__zoom {
-  --news-zoom-delay: 3.5s;
-  --news-zoom-min: 0.8;
-  --news-zoom-max: 1.25;
-}
-
-@keyframes news-zoom {
-  0%,
-  100% {
-    transform: scale(var(--news-zoom-min));
-  }
-  50% {
-    transform: scale(var(--news-zoom-max));
-  }
+  animation: none;
 }
 
 @keyframes news-reveal {
@@ -93,10 +72,6 @@
 @media (max-width: 640px) {
   .news {
     padding-top: 68px;
-  }
-
-  .news__title {
-    letter-spacing: 0.12em;
   }
 }
 

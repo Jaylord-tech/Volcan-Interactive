@@ -27,8 +27,10 @@ function Testimonials() {
 
   return (
     <section ref={sectionRef} className="testimonials">
-      <p className="testimonials__eyebrow reveal-on-scroll">We Always Deliver</p>
-      <h2 className="reveal-on-scroll">What Are Our Partners Saying</h2>
+      <div className="testimonials__header">
+        <p className="testimonials__eyebrow reveal-on-scroll">We Always Deliver</p>
+        <h2 className="reveal-on-scroll">WHAT ARE OUR PARTNERS SAYING</h2>
+      </div>
 
       <div className="testimonials__card">
         <div className="testimonials__copy">
@@ -38,7 +40,9 @@ function Testimonials() {
             nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum
             tellus elit sed risus. Maecenas eget condimentum velit.
           </p>
-          <span className="testimonials__tag reveal-on-scroll">Chess Game Creator</span>
+          <span className="testimonials__tag reveal-on-scroll">
+            Chess Game Creator
+          </span>
         </div>
         <div className="testimonials__image reveal-on-scroll reveal-right">
           <img

@@ -1,69 +1,87 @@
 .contact {
-  padding: 90px clamp(20px, 6vw, 80px) 70px;
+  padding: 110px clamp(20px, 6vw, 80px) 40px;
+  position: relative;
   text-align: center;
   scroll-margin-top: 200px;
 }
 
+.contact::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: clamp(120px, 18vw, 220px);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000000);
+  pointer-events: none;
+  z-index: 0;
+}
+
 .contact__header p {
-  color: #ff7418;
-  letter-spacing: 0.35em;
+  font-family: "Vastago Grotesk", "Poppins", "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.5em;
+  color: #ff9b5d;
   text-transform: uppercase;
-  font-size: 14px;
+  margin-top: 20px;
   margin-bottom: 12px;
 }
 
 .contact__header h2 {
-  font-size: clamp(26px, 3.4vw, 40px);
-  font-weight: 500;
-  letter-spacing: 0.08em;
+  font-family: "Sk-Modernist", "Poppins", "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 44px;
+  text-align: center;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  word-spacing: 0;
   text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+@media (min-width: 1200px) {
+  .contact__header p,
+  .contact__header h2 {
+    position: relative;
+    top: -10px;
+  }
 }
 
 .contact__content {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 40px;
+  gap: clamp(20px, 3vw, 36px);
   align-items: center;
-  margin: 46px auto 32px;
-  max-width: 980px;
+  margin: 0 auto 32px;
+  max-width: 1040px;
+  padding: 0;
 }
 
 .contact__image {
-  background-color: #0a0f14;
+  background-color: transparent;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 12px;
-  height: 360px;
+  background-size: 100% auto;
+  border-radius: 0;
+  width: min(520px, 100%);
+  aspect-ratio: 1 / 1;
+  height: auto;
   position: relative;
-  overflow: hidden;
-  animation: contact-pan 18s ease-in-out infinite;
+  overflow: visible;
+  animation: none;
 }
 
 .contact__image::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -60%;
-  width: 40%;
-  height: 200%;
-  background: linear-gradient(
-    120deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.18) 45%,
-    rgba(255, 255, 255, 0.35) 55%,
-    transparent 100%
-  );
-  transform: translateX(-120%) rotate(8deg);
-  animation: contact-ray 6s linear infinite;
-  pointer-events: none;
+  content: none;
 }
 
 .contact__image::after {
-  content: "";
-  position: absolute;
-  inset: 16px;
-  border: 1px dashed rgba(255, 255, 255, 0.18);
+  content: none;
 }
 
 .contact__form {
@@ -71,6 +89,9 @@
   flex-direction: column;
   gap: 18px;
   text-align: left;
+  width: min(472px, 100%);
+  height: auto;
+  margin-top: 0;
 }
 
 .contact__form label {
@@ -107,14 +128,15 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: clamp(10px, 2.2vw, 12px);
+  font-size: clamp(11px, 2.2vw, 14px);
+  line-height: 1.2;
   font-weight: 600;
-  letter-spacing: clamp(0.1em, 0.5vw, 0.22em);
-  padding: 0;
+  letter-spacing: clamp(0.06em, 0.35vw, 0.18em);
+  padding: 0 clamp(8px, 2vw, 14px);
   position: relative;
   text-transform: uppercase;
-  width: clamp(160px, 48vw, 201px);
-  aspect-ratio: 201 / 48;
+  width: clamp(170px, 52vw, 240px);
+  aspect-ratio: 240 / 48;
   height: auto;
   margin-top: 10px;
   white-space: nowrap;
@@ -148,8 +170,13 @@
 }
 
 .contact__note {
-  color: #c9c9c9;
-  font-size: 13px;
+  font-family: "Sk-Modernist", "Poppins", "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  color: #ffffff;
   margin-top: 24px;
 }
 
@@ -180,13 +207,43 @@
 @media (max-width: 640px) {
   .contact {
     scroll-margin-top: 120px;
+    padding: 90px 16px 40px;
   }
 
   .contact__content {
     grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+
+  .contact__form {
+    margin-top: 0;
   }
 
   .contact__submit {
     align-self: center;
+  }
+
+  .contact__header p {
+    letter-spacing: 0.22em;
+    font-size: 16px;
+  }
+
+  .contact__header h2 {
+    font-size: clamp(26px, 8vw, 40px);
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+
+  .contact__note {
+    font-size: 16px;
+    line-height: 26px;
+    margin-top: 18px;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 641px) {
+  .contact__form {
+    margin-top: -40px;
   }
 }

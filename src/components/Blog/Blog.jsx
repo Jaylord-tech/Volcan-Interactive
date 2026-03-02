@@ -1,13 +1,79 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "../Navbar/Navbar.jsx";
 import Footer from "../Footer/Footer.jsx";
 import "./Blog.css";
 
-function Blog() {
+const defaultCopyParagraphs = [
+  "Designed and built theme-based UI architectures in Unreal Engine that allowed designers to switch between multiple interface styles without touching Blueprints. This enabled faster iteration, improved accessibility for non-technical designers, and ensured visual consistency across different game themes.",
+  "This approach accelerated iteration, expanded accessibility for non-technical team members, and preserved visual consistency across diverse game themes. Through optimized UI logic and structured workflows, the system reduced implementation friction and empowered designers to prototype and refine interfaces efficiently, supporting accelerated production timelines and elevated gameplay quality.",
+];
+
+const defaultGalleryThumbs = [
+  {
+    className: "blog__thumb blog__thumb--4 reveal-on-scroll reveal-left reveal-delay-3",
+    src: "/Volcan-Interactive/assests/blogImg4.png",
+    alt: "Halloween character 4",
+  },
+  {
+    className: "blog__thumb blog__thumb--3 reveal-on-scroll reveal-left reveal-delay-2",
+    src: "/Volcan-Interactive/assests/blogImg3.png",
+    alt: "Halloween character 3",
+  },
+  {
+    className: "blog__thumb blog__thumb--2 reveal-on-scroll reveal-left reveal-delay-1",
+    src: "/Volcan-Interactive/assests/blogImg2.png",
+    alt: "Halloween character 2",
+  },
+  {
+    className: "blog__thumb blog__thumb--1 reveal-on-scroll reveal-left",
+    src: "/Volcan-Interactive/assests/blogImg1.png",
+    alt: "Halloween character 1",
+  },
+];
+
+function Blog({
+  sectionId = "halloween",
+  heroImage = "/Volcan-Interactive/assests/blogBackground.png",
+  titleImage = "/Volcan-Interactive/assests/halloweenText.png",
+  titleText = "",
+  titleTextClassName = "",
+  titleSubtext = "",
+  titleSubtextClassName = "",
+  titleSubtextPlacement = "inline",
+  mainImage = "/Volcan-Interactive/assests/blogMain.png",
+  galleryImage = "/Volcan-Interactive/assests/blogBackground.png",
+  titleAlt = "Halloween",
+  mainAlt = "Halloween main piece",
+  galleryAlt = "Halloween project cover",
+  copyParagraphs = defaultCopyParagraphs,
+  galleryThumbs = defaultGalleryThumbs,
+  galleryLoopImages = [],
+  showMainVisual = true,
+  collapseContentWhenNoMainVisual = true,
+  showGalleryLeft = true,
+  galleryInfoText = "Learn more about our services and how we support studios",
+  showGalleryCta = true,
+  galleryCtaLabel = "Watch Now",
+}) {
   const sectionRef = useRef(null);
-  const [mainRevealed, setMainRevealed] = useState(false);
   const { hash } = useLocation();
+  const [activeGalleryIndex, setActiveGalleryIndex] = useState(0);
+  const [galleryNoTransition, setGalleryNoTransition] = useState(false);
+
+  const gallerySlides = useMemo(() => {
+    const sourceImages = galleryLoopImages.length ? galleryLoopImages : [galleryImage];
+    return sourceImages.map((item, index) =>
+      typeof item === "string"
+        ? { src: item, alt: `${galleryAlt} ${index + 1}` }
+        : { src: item.src, alt: item.alt || `${galleryAlt} ${index + 1}` }
+    );
+  }, [galleryLoopImages, galleryImage, galleryAlt]);
+
+  const galleryLoopSlides = useMemo(() => {
+    if (gallerySlides.length <= 1) return gallerySlides;
+    return [...gallerySlides, gallerySlides[0]];
+  }, [gallerySlides]);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -40,6 +106,56 @@ function Blog() {
     window.scrollTo({ top: Math.max(top, 0), left: 0, behavior: "smooth" });
   }, [hash]);
 
+  useEffect(() => {
+    setGalleryNoTransition(false);
+    setActiveGalleryIndex(0);
+  }, [gallerySlides.length, sectionId]);
+
+  useEffect(() => {
+    if (gallerySlides.length <= 1) return;
+
+    const intervalId = window.setInterval(() => {
+      setActiveGalleryIndex((prev) => {
+        if (prev >= gallerySlides.length) return prev;
+        return prev + 1;
+      });
+    }, 3000);
+
+    return () => window.clearInterval(intervalId);
+  }, [gallerySlides.length]);
+
+  useEffect(() => {
+    if (gallerySlides.length <= 1) return;
+    if (activeGalleryIndex !== gallerySlides.length) return;
+
+    // Fallback reset for browsers/tabs where transitionend may not fire
+    const fallbackId = window.setTimeout(() => {
+      setGalleryNoTransition(true);
+      setActiveGalleryIndex(0);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setGalleryNoTransition(false);
+        });
+      });
+    }, 750);
+
+    return () => window.clearTimeout(fallbackId);
+  }, [activeGalleryIndex, gallerySlides.length]);
+
+  const handleGalleryTransitionEnd = () => {
+    if (gallerySlides.length <= 1) return;
+    if (activeGalleryIndex !== gallerySlides.length) return;
+
+    setGalleryNoTransition(true);
+    setActiveGalleryIndex(0);
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        setGalleryNoTransition(false);
+      });
+    });
+  };
+
   return (
     <div className="page">
       <Navbar hideBottomLine />
@@ -47,8 +163,8 @@ function Blog() {
         <section className="blog__hero reveal reveal-up">
           <img
             className="blog__hero-image"
-            src="/Volcan-Interactive/assests/blogBackground.png"
-            alt="Halloween chess game creator"
+            src={heroImage}
+            alt={galleryAlt}
             loading="eager"
             decoding="async"
             fetchpriority="high"
@@ -71,92 +187,106 @@ function Blog() {
           />
         </section>
 
-        <section className="blog__content" id="halloween">
+        <section
+          className={`blog__content${
+            !showMainVisual && collapseContentWhenNoMainVisual ? " blog__content--single" : ""
+          }`}
+          id={sectionId}
+        >
           <div className="blog__copy">
-            <img
-              className="blog__title-image reveal-on-scroll reveal-left"
-              src="/Volcan-Interactive/assests/halloweenText.png"
-              alt="Halloween"
-              loading="lazy"
-              decoding="async"
-            />
-            <p className="reveal-on-scroll reveal-left">
-              We developed a modular system in Unreal Engine that allows designers
-              to create and edit chess games without requiring expertise in Unreal
-              Motion Graphics. Our focus was on building a themed UI system,
-              enabling designers to switch between multiple interface styles
-              seamlessly, without interacting with Blueprints.
-            </p>
-            <p className="reveal-on-scroll reveal-left">
-              This approach accelerated iteration, improved accessibility for
-              non-technical team members, and ensured visual consistency across
-              different game themes. By optimizing UI logic and workflows, the
-              system reduced development bottlenecks and empowered designers to
-              prototype and polish interfaces more efficiently.
-            </p>
+            {titleText ? (
+              <p
+                className={`blog__title-text reveal-on-scroll reveal-left ${titleTextClassName}`.trim()}
+              >
+                {titleText}
+              </p>
+            ) : (
+              <img
+                className="blog__title-image reveal-on-scroll reveal-left"
+                src={titleImage}
+                alt={titleAlt}
+                loading="lazy"
+                decoding="async"
+              />
+            )}
+            {copyParagraphs.map((paragraph, index) => (
+              <p className="reveal-on-scroll reveal-left" key={`${sectionId}-copy-${index}`}>
+                {paragraph}
+              </p>
+            ))}
+            {titleSubtext && titleSubtextPlacement === "inline" ? (
+              <p
+                className={`blog__title-subtext reveal-on-scroll reveal-left ${titleSubtextClassName}`.trim()}
+              >
+                {titleSubtext}
+              </p>
+            ) : null}
           </div>
 
-          <div className="blog__main-visual">
-            <img
-              className={`reveal-on-scroll reveal-right${
-                mainRevealed ? " is-visible" : ""
-              }`}
-              src="/Volcan-Interactive/assests/blogMain.png"
-              alt="Halloween main piece"
-              loading="lazy"
+          {showMainVisual ? (
+            <div className="blog__main-visual">
+              <img
+                className="reveal-on-scroll reveal-right"
+                src={mainImage}
+                alt={mainAlt}
+                loading="lazy"
               decoding="async"
             />
           </div>
+        ) : null}
+
         </section>
 
-        <section className="blog__gallery">
-          <div className="blog__gallery-left">
-            <div className="blog__thumbs">
-              <img
-                className="reveal-on-scroll reveal-left reveal-delay-3"
-                src="/Volcan-Interactive/assests/blogImg4.png"
-                alt="Halloween character 4"
-                loading="lazy"
-                decoding="async"
-              />
-              <img
-                className="reveal-on-scroll reveal-left reveal-delay-2"
-                src="/Volcan-Interactive/assests/blogImg3.png"
-                alt="Halloween character 3"
-                loading="lazy"
-                decoding="async"
-              />
-              <img
-                className="reveal-on-scroll reveal-left reveal-delay-1"
-                src="/Volcan-Interactive/assests/blogImg2.png"
-                alt="Halloween character 2"
-                loading="lazy"
-                decoding="async"
-              />
-              <img
-                className="reveal-on-scroll reveal-left"
-                src="/Volcan-Interactive/assests/blogImg1.png"
-                alt="Halloween character 1"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <p className="reveal-on-scroll reveal-left">
-              Learn more about our services and how we support studios
+        {titleSubtext && titleSubtextPlacement === "between" ? (
+          <div className="blog__title-subtext-wrap reveal-on-scroll reveal-up">
+            <p
+              className={`blog__title-subtext blog__title-subtext--between ${titleSubtextClassName}`.trim()}
+            >
+              {titleSubtext}
             </p>
-            <button className="blog__cta reveal-on-scroll reveal-left" type="button">
-              <span>Watch Now</span>
-            </button>
           </div>
+        ) : null}
 
-          <div className="blog__gallery-right">
-            <img
-              className="reveal-on-scroll reveal-right"
-              src="/Volcan-Interactive/assests/blogBackground.png"
-              alt="Halloween project cover"
-              loading="lazy"
-              decoding="async"
-            />
+        <section className={`blog__gallery${showGalleryLeft ? "" : " blog__gallery--single"}`}>
+          {showGalleryLeft ? (
+            <div className="blog__gallery-left">
+              {galleryThumbs.length ? (
+                <div className="blog__thumbs">
+                  {galleryThumbs.map((thumb, index) => (
+                    <img
+                      className={thumb.className}
+                      src={thumb.src}
+                      alt={thumb.alt}
+                      loading="lazy"
+                      decoding="async"
+                      key={`${sectionId}-thumb-${index}`}
+                    />
+                  ))}
+                </div>
+              ) : null}
+              {galleryInfoText ? <p className="reveal-on-scroll reveal-left">{galleryInfoText}</p> : null}
+              {showGalleryCta ? (
+                <button className="blog__cta reveal-on-scroll reveal-left" type="button">
+                  <span>{galleryCtaLabel}</span>
+                </button>
+              ) : null}
+            </div>
+          ) : null}
+
+          <div className="blog__gallery-right reveal-on-scroll reveal-right">
+            <div
+              className={`blog__gallery-slider${galleryNoTransition ? " no-transition" : ""}`}
+              onTransitionEnd={handleGalleryTransitionEnd}
+              style={{
+                transform: `translateX(-${activeGalleryIndex * 100}%)`,
+              }}
+            >
+              {galleryLoopSlides.map((slide, index) => (
+                <div className="blog__gallery-slide" key={`${sectionId}-slide-${index}`}>
+                  <img src={slide.src} alt={slide.alt} loading="lazy" decoding="async" />
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       </main>

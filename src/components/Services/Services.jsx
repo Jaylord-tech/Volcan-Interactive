@@ -94,19 +94,30 @@ function Services() {
             <p className="services-page__eyebrow reveal-on-scroll">We Offer</p>
             <h1 className="reveal-on-scroll reveal-delay-1">
               Game <span className="services-page__highlight">UI/UX</span> Design and{" "}
+              <br />
               <span className="services-page__highlight">Implementation</span>
             </h1>
             <p className="reveal-on-scroll reveal-delay-2">
-              We provide end to end Game UI/UX design and implementation services
-              tailored for real-time interactive experiences. From early concepts
-              to final in-engine delivery, we work closely with studios to create
-              intuitive, performance-focused interfaces that support seamless
-              storytelling and player immersion.
+              <span className="services-page__hero-line">
+                We provide end to end Game UI/UX design and implementation services tailored for real time interactive experiences. From early
+              </span>
+              <span className="services-page__hero-line">
+                concepts to final in engine delivery, we work closely with studios to create intuitive, performance focused interfaces that support
+              </span>
+              <span className="services-page__hero-line">
+                gameplay, storytelling, and player immersion.
+              </span>
             </p>
             <p className="reveal-on-scroll reveal-delay-3">
-              Our process bridges visual design and technical execution, ensuring
-              every interface is polished, production-ready, and optimized for
-              real gameplay constraints.
+              <span className="services-page__hero-line services-page__hero-line--no-wrap">
+                Our process bridges visual design and technical execution, ensuring every interface is not only visually refined but also optimized for real
+              </span>
+              <span className="services-page__hero-line">
+                world production constraints. By integrating seamlessly into existing development pipelines, we help teams ship polished, scalable UI
+              </span>
+              <span className="services-page__hero-line">
+                systems without slowing down production or compromising quality.
+              </span>
             </p>
           </div>
         </section>

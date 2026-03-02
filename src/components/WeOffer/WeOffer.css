@@ -8,18 +8,28 @@
 }
 
 .offer__eyebrow {
-  color: #ff7418;
-  letter-spacing: 0.4em;
+  color: #ff9b5d;
+  letter-spacing: 0.5em;
   text-transform: uppercase;
-  font-size: 14px;
-  margin-bottom: 16px;
+  font-size: clamp(13px, 1.2vw, 16px);
+  line-height: clamp(20px, 1.8vw, 24px);
+  font-family: "Vastago Grotesk", "Poppins", "Segoe UI", sans-serif;
+  font-weight: 400;
+  opacity: 0.8;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  white-space: nowrap;
+  margin: 0 auto 16px;
 }
 
 .offer h2 {
   font-size: clamp(28px, 4vw, 44px);
-  font-weight: 500;
+  font-family: "Vastago Grotesk", "Poppins", "Segoe UI", sans-serif;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
   margin-bottom: 16px;
 }
 
@@ -28,99 +38,163 @@
 }
 
 .offer__copy {
-  max-width: 760px;
+  max-width: 1065px;
   margin: 0 auto 40px;
-  color: #cfcfcf;
-  line-height: 1.6;
+  color: #ffffff;
+  font-family: "Sk-Modernist", "Poppins", "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  text-wrap: normal;
+  padding: 0;
 }
 
 .offer__grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(160px, 200px));
   gap: 24px;
   max-width: 1100px;
   margin: 0 auto 36px;
+  justify-content: center;
 }
 
 .offer__card img {
   width: 100%;
   display: block;
   border: 1px solid rgba(255, 116, 24, 0.6);
-  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
-  transform: scale(1.01);
-  will-change: transform;
+  transition: none;
+  transform: none;
+  will-change: auto;
 }
 
 .offer__card {
   position: relative;
   overflow: hidden;
-  transition: transform 220ms ease;
-  border-radius: 8px;
+  transition: none;
+  border-radius: 0;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 200px;
+  aspect-ratio: 200 / 230;
+  height: auto;
+  border: 1px solid #ff9b5d;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    #000000 84.6%
+  );
 }
 
-.offer__card::before {
+.offer__card-label {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  width: 114px;
+  height: 32px;
+  padding: 0;
+  text-align: center;
+  font-family: "Sk-Modernist", "Poppins", "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0;
+  color: #ffffff;
+  background: transparent;
+  z-index: 2;
+}
+
+.offer__card::after {
   content: "";
   position: absolute;
-  top: -40%;
-  left: -60%;
-  width: 40%;
-  height: 180%;
+  inset: 0;
   background: linear-gradient(
-    120deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.18) 45%,
-    rgba(255, 255, 255, 0.35) 55%,
-    transparent 100%
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    #fb670d 85.2%
   );
-  transform: translateX(-120%) rotate(8deg);
-  animation: offer-ray 10s linear infinite;
-  opacity: 0.75;
-  mix-blend-mode: screen;
-  pointer-events: none;
+  opacity: 0;
+  transition: opacity 200ms ease, transform 200ms ease;
+  z-index: 1;
 }
 
-.offer__card:hover img {
-  transform: translateY(-6px) scale(1.04);
-  border-color: rgba(255, 116, 24, 0.9);
-  box-shadow: 0 16px 32px rgba(255, 116, 24, 0.22);
+.offer__card:hover::after {
+  opacity: 1;
 }
 
-@keyframes offer-ray {
-  0% {
-    transform: translateX(-120%) rotate(8deg);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(320%) rotate(8deg);
-    opacity: 0;
-  }
+.offer__card:hover {
+  border: 2px solid #fb670d;
+  transform: scale(0.97);
+  transition: transform 200ms ease, border-color 200ms ease;
 }
+
+.offer__card:hover .offer__card-label {
+  width: 114px;
+  height: 32px;
+  bottom: 14px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  color: #020202;
+}
+
+.offer__card img {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.offer__card-label span {
+  display: block;
+}
+
+.offer__card-label.is-active {
+  background: transparent;
+  color: #ffffff;
+  font-weight: 400;
+}
+
 
 .offer__note {
   color: #d0d0d0;
-  margin-bottom: 20px;
+  width: min(477px, 100%);
+  height: auto;
+  max-width: 100%;
+  margin: 0 auto 20px;
+  font-family: "Sk-Modernist", "Poppins", "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  color: #ffffff;
 }
 
 .offer__cta {
   background: none;
   border: none;
   color: #ffffff;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: clamp(10px, 2.2vw, 12px);
-  font-weight: 600;
-  letter-spacing: clamp(0.1em, 0.5vw, 0.22em);
-  padding: 0;
-  margin-top: 10px;
+  width: clamp(160px, 30vw, 190px);
+  height: auto;
+  aspect-ratio: 190 / 50;
+  font-family: "Sk-Modernist", "Poppins", "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 46px;
+  letter-spacing: 0;
+  padding: 2px 0;
+  margin: 10px auto 0;
   position: relative;
   text-transform: uppercase;
-  width: clamp(160px, 48vw, 201px);
-  aspect-ratio: 201 / 48;
-  height: auto;
   white-space: nowrap;
 }
 
@@ -148,11 +222,30 @@
 @media (max-width: 960px) {
   .offer__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-items: center;
   }
 }
 
 @media (max-width: 640px) {
+  .offer__eyebrow {
+    letter-spacing: 0.22em;
+  }
+
+  .offer__copy {
+    max-width: 100%;
+    margin-bottom: 28px;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 0 4px;
+  }
+
+  .offer__note {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
   .offer__grid {
     grid-template-columns: 1fr;
+    justify-items: center;
   }
 }

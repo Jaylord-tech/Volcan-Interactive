@@ -2,17 +2,13 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./OurWork.css";
 import Footer from "../Footer/Footer.jsx";
-import GetInTouch from "../GetInTouch/GetInTouch.jsx";
 import Navbar from "../Navbar/Navbar.jsx";
+import GetInTouch from "../GetInTouch/GetInTouch.jsx";
 
 const showcaseItems = [
   {
     title: "Chess Game Creator",
     image: "/Volcan-Interactive/assests/chess.png",
-  },
-  {
-    title: "United State",
-    image: "/Volcan-Interactive/assests/unitedState.png",
   },
   {
     title: "Halloween",
@@ -22,6 +18,10 @@ const showcaseItems = [
     title: "Critters' Breakout!",
     image: "/Volcan-Interactive/assests/critters.png",
     isWide: false,
+  },
+  {
+    title: "United State",
+    image: "/Volcan-Interactive/assests/unitedState.png",
   },
 ];
 
@@ -56,8 +56,17 @@ function OurWork() {
   };
 
   const handleCardClick = (item) => {
+    if (item.title === "United State") {
+      navigate("/unitedstate");
+    }
+    if (item.title === "Chess Game Creator") {
+      navigate("/chess");
+    }
     if (item.title === "Halloween") {
       navigate("/blog");
+    }
+    if (item.title === "Critters' Breakout!") {
+      navigate("/critters");
     }
   };
 
@@ -79,15 +88,22 @@ function OurWork() {
           <span className="reveal reveal-right reveal-delay-2">Featured</span>
         </h1>
           <div className="ourwork__filters reveal reveal-up reveal-delay-2">
-            <button type="button">All</button>
+            <button type="button" className="is-active">All</button>
             <button type="button">PC</button>
-            <button type="button" className="is-active">Console</button>
+            <button type="button">Console</button>
             <button type="button">Mobile</button>
+            <button type="button">Web3</button>
           </div>
         </div>
 
         <div className="ourwork__grid">
-          {showcaseItems.map((item, index) => {
+        {showcaseItems.map((item, index) => {
+          const isClickable =
+            item.title === "United State" ||
+            item.title === "Chess Game Creator" ||
+            item.title === "Halloween" ||
+            item.title === "Critters' Breakout!";
+
           let revealClass = "reveal-up";
           if (index === 0) revealClass = "reveal-left";
           if (index === 1) revealClass = "reveal-down";
@@ -104,10 +120,30 @@ function OurWork() {
               onMouseLeave={resetCardTilt}
               onClick={() => handleCardClick(item)}
               onKeyDown={(event) => handleCardKeyDown(event, item)}
-              role={item.title === "Halloween" ? "button" : undefined}
-              tabIndex={item.title === "Halloween" ? 0 : undefined}
-              aria-label={item.title === "Halloween" ? "Open Halloween project" : undefined}
-              data-link={item.title === "Halloween" ? "halloween" : undefined}
+              role={isClickable ? "button" : undefined}
+              tabIndex={isClickable ? 0 : undefined}
+              aria-label={
+                item.title === "United State"
+                  ? "Open United State project"
+                  : item.title === "Chess Game Creator"
+                  ? "Open Chess Game Creator project"
+                  : item.title === "Halloween"
+                  ? "Open Halloween project"
+                  : item.title === "Critters' Breakout!"
+                  ? "Open Critters Breakout project"
+                  : undefined
+              }
+              data-link={
+                item.title === "United State"
+                  ? "unitedstate"
+                  : item.title === "Chess Game Creator"
+                  ? "chess"
+                  : item.title === "Halloween"
+                  ? "halloween"
+                  : item.title === "Critters' Breakout!"
+                  ? "critters"
+                  : undefined
+              }
             >
               <img
                 className="ourwork__card-image"
@@ -134,8 +170,8 @@ function OurWork() {
         ))}
       </div>
 
-        <GetInTouch />
       </main>
+      <GetInTouch />
       <Footer />
     </div>
   );

@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import "./Navbar.css";
-import { getContactOffset, scrollToContact } from "../../utils/scrollToContact.js";
 
 function Navbar({ hideBottomLine = false }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,7 +8,7 @@ function Navbar({ hideBottomLine = false }) {
   const lastScrollYRef = useRef(0);
   const navRef = useRef(null);
   const navigate = useNavigate();
-  const { pathname } = useLocation();
+  const location = useLocation();
 
   useEffect(() => {
     const getScrollY = () =>
@@ -63,15 +62,38 @@ function Navbar({ hideBottomLine = false }) {
     return () => document.removeEventListener("click", handleClick);
   }, [isMenuOpen]);
 
-  const handleContactClick = () => {
-    const contactSection = document.querySelector("#contact");
-    const offset = getContactOffset(pathname);
+  useEffect(() => {
     setIsMenuOpen(false);
-    if (contactSection) {
-      scrollToContact({ offset });
-    } else {
-      navigate({ pathname: "/", hash: "#contact" });
-    }
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (!isMenuOpen) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    const isMobileNav = window.matchMedia("(max-width: 960px)").matches;
+    if (!isMobileNav) return undefined;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = isMenuOpen ? "hidden" : previousOverflow || "";
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [isMenuOpen]);
+
+  const handleContactClick = () => {
+    setIsMenuOpen(false);
+    navigate("/contact");
   };
 
   return (
@@ -115,6 +137,7 @@ function Navbar({ hideBottomLine = false }) {
             type="button"
             aria-label="Toggle navigation"
             aria-expanded={isMenuOpen}
+            aria-controls="hero-mobile-menu"
             onClick={() => setIsMenuOpen((open) => !open)}
           >
             <span />
@@ -128,7 +151,10 @@ function Navbar({ hideBottomLine = false }) {
           </div>
         </div>
       </header>
-      <div className={`hero__mobile-menu${isMenuOpen ? " is-open" : ""}`}>
+      <div
+        id="hero-mobile-menu"
+        className={`hero__mobile-menu${isMenuOpen ? " is-open" : ""}`}
+      >
         <NavLink
           to="/services"
           className={({ isActive }) => (isActive ? "is-active" : undefined)}

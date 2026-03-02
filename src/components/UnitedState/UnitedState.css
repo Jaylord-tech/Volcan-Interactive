@@ -1,0 +1,87 @@
+.united-state__coming-soon {
+  font-family: "Vastago Grotesk", "Poppins", "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 44px;
+  text-align: center;
+  color: #FF9B5D;
+}
+
+#unitedstate + .blog__title-subtext-wrap .blog__title-subtext--between.united-state__coming-soon {
+  margin: 70px 0;
+}
+
+#unitedstate .blog__title-image {
+  width: min(402px, 100%);
+  margin-bottom: 18px;
+  margin-left: -30px;
+}
+
+#unitedstate .blog__copy {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  text-align: left;
+}
+
+#unitedstate .blog__copy p {
+  position: static;
+  width: 576px;
+  max-width: 100%;
+  height: auto;
+  margin: 8px 0 0;
+  font-family: "Sk-Modernist";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  color: #FFFFFF;
+  text-align: left;
+}
+
+#unitedstate + .blog__title-subtext-wrap + .blog__gallery .blog__gallery-left {
+  padding-top: clamp(300px, 25vw, 360px);
+  margin-top: 30px;
+}
+
+#unitedstate + .blog__title-subtext-wrap + .blog__gallery .blog__gallery-left p {
+  text-align: left;
+}
+
+@media (max-width: 960px) {
+  .united-state__coming-soon {
+    font-size: clamp(44px, 6.8vw, 56px);
+    line-height: 1.06;
+  }
+
+  #unitedstate .blog__copy p {
+    width: 100%;
+    font-size: clamp(16px, 2.2vw, 18px);
+    line-height: clamp(26px, 3vw, 30px);
+  }
+
+  #unitedstate .blog__title-image {
+    width: min(300px, 80vw);
+  }
+
+  #unitedstate + .blog__title-subtext-wrap .blog__title-subtext--between.united-state__coming-soon {
+    margin: 70px 0;
+  }
+
+  #unitedstate + .blog__title-subtext-wrap + .blog__gallery .blog__gallery-left {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .united-state__coming-soon {
+    font-size: clamp(42px, 10vw, 52px);
+    line-height: 1.05;
+  }
+
+  #unitedstate .blog__copy p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}

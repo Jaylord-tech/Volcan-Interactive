@@ -73,12 +73,18 @@
   fill: currentColor;
 }
 
+.footer__icon--behance svg {
+  width: 20px;
+  height: 20px;
+}
+
 .footer__links {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
   font-weight: 600;
 }
+
 
 @media (max-width: 900px) {
   .footer {

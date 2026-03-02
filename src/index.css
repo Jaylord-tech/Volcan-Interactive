@@ -4,6 +4,11 @@
   padding: 0;
 }
 
+:root {
+  --font-base: "Sk-Modernist", "Poppins", "Segoe UI", sans-serif;
+  --font-eyebrow: "Vastago Grotesk", "Poppins", "Segoe UI", sans-serif;
+}
+
 html,
 body,
 #root {
@@ -15,10 +20,20 @@ body,
 body {
   background: #070707;
   color: #f5f5f5;
-  font-family: "Poppins", "Segoe UI", sans-serif;
+  font-family: var(--font-base);
   overflow-y: auto;
   overflow-x: clip;
   position: relative;
+}
+
+[class*="__eyebrow"] {
+  font-family: var(--font-eyebrow);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.5em;
+  color: #ff9b5d;
 }
 
 * {
@@ -33,4 +48,57 @@ button {
 img,
 svg {
   max-width: 100%;
+}
+
+@media (max-width: 960px) {
+  .page h1 {
+    font-size: clamp(28px, 5.6vw, 44px) !important;
+    line-height: 1.12 !important;
+  }
+
+  .page h2 {
+    font-size: clamp(24px, 4.8vw, 38px) !important;
+    line-height: 1.14 !important;
+  }
+
+  .page h3 {
+    font-size: clamp(20px, 4vw, 32px) !important;
+    line-height: 1.16 !important;
+  }
+
+  .page p:not([class*="__eyebrow"]) {
+    font-size: clamp(14px, 2.2vw, 18px) !important;
+    line-height: clamp(24px, 3.6vw, 30px) !important;
+  }
+
+  [class*="__eyebrow"] {
+    font-size: clamp(13px, 1.9vw, 16px) !important;
+    line-height: clamp(20px, 2.8vw, 24px) !important;
+    letter-spacing: clamp(0.16em, 0.6vw, 0.5em) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .page h1 {
+    font-size: clamp(24px, 8.2vw, 34px) !important;
+  }
+
+  .page h2 {
+    font-size: clamp(22px, 7vw, 30px) !important;
+  }
+
+  .page h3 {
+    font-size: clamp(18px, 6vw, 26px) !important;
+  }
+
+  .page p:not([class*="__eyebrow"]) {
+    font-size: clamp(13px, 3.9vw, 16px) !important;
+    line-height: clamp(22px, 6vw, 27px) !important;
+  }
+
+  [class*="__eyebrow"] {
+    font-size: clamp(12px, 3.2vw, 14px) !important;
+    line-height: clamp(18px, 5vw, 22px) !important;
+    letter-spacing: clamp(0.12em, 0.8vw, 0.24em) !important;
+  }
 }

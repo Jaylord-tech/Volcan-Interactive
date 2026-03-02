@@ -1,10 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap");
+
 .app {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap");
+@font-face {
+  font-family: "Sk-Modernist";
+  src: url("/Volcan-Interactive/assests/fonts/sk-modernist/Sk-Modernist-Regular.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vastago Grotesk";
+  src: url("/Volcan-Interactive/assests/fonts/vastago/vastago font/VastagoGrotesk-Regular.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 .page {
   min-height: 100vh;
@@ -172,4 +190,49 @@ button::after {
 button:hover::after {
   transform: scaleX(1);
   opacity: 1;
+}
+
+.hero__cta,
+.offer__cta,
+.contact__submit,
+.about__cta,
+.blog__cta {
+  font-family: "Sk-Modernist", "Poppins", "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 46px;
+  min-width: 152px;
+  padding: 0 18px;
+}
+
+.hero__cta::before,
+.offer__cta::before,
+.contact__submit::before,
+.about__cta::before,
+.blog__cta::before {
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 640px) {
+  .hero__cta,
+  .offer__cta,
+  .contact__submit,
+  .about__cta,
+  .blog__cta {
+    font-size: clamp(11px, 3.4vw, 14px);
+    line-height: 1.2;
+    letter-spacing: clamp(0.02em, 0.2vw, 0.08em);
+    min-height: 40px;
+    min-width: 138px;
+    padding: 0 12px;
+    white-space: nowrap;
+  }
 }

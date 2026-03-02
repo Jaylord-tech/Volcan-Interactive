@@ -10,7 +10,7 @@ const slides = [
 ];
 
 function Featured() {
-  const [activeIndex, setActiveIndex] = useState(slides.length);
+  const [activeIndex, setActiveIndex] = useState(0);
   const [noTransition, setNoTransition] = useState(false);
   const loopSlides = useMemo(() => [...slides, ...slides, ...slides], []);
   const sectionRef = useRef(null);
@@ -46,28 +46,42 @@ function Featured() {
 
   useEffect(() => {
     if (activeIndex < slides.length * 2) return;
-    setNoTransition(true);
     const id = setTimeout(() => {
-      setActiveIndex(slides.length);
-      setNoTransition(false);
-    }, 40);
+      setNoTransition(true);
+      setActiveIndex((prev) => prev - slides.length);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setNoTransition(false);
+        });
+      });
+    }, 600);
     return () => clearTimeout(id);
-  }, [activeIndex]);
+  }, [activeIndex, slides.length]);
 
-  const normalizedIndex = activeIndex % slides.length;
-  const trackStyle = {
-    transform: `translateX(calc(50% - (var(--card-width) / 2) - ${activeIndex} * (var(--card-width) + var(--card-gap))))`,
+  const handleProjectClick = (title) => {
+    if (title === "United State") {
+      navigate("/unitedstate#unitedstate");
+    }
+    if (title === "Chess Game Creator") {
+      navigate("/chess#chess");
+    }
+    if (title === "Halloween") {
+      navigate("/blog#halloween");
+    }
+    if (title === "Critters Breakout") {
+      navigate("/critters#critters");
+    }
   };
 
-  const handleHalloweenClick = () => {
-    navigate("/blog#halloween");
-  };
-
-  const handleCardKeyDown = (event) => {
+  const handleCardKeyDown = (event, title) => {
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
-      handleHalloweenClick();
+      handleProjectClick(title);
     }
+  };
+
+  const handleViewAllClick = () => {
+    navigate("/ourwork");
   };
 
   return (
@@ -81,28 +95,52 @@ function Featured() {
       <div className="featured__carousel reveal-on-scroll">
         <div
           className={`featured__track${noTransition ? " no-transition" : ""}`}
-          style={trackStyle}
+          style={{
+            transform: `translateX(calc(50% - (var(--card-width) / 2) - ${
+              activeIndex
+            } * (var(--card-width) + var(--card-gap))))`,
+          }}
         >
           {loopSlides.map((slide, index) => {
-            const position = index % slides.length;
-            const prevIndex = (normalizedIndex - 1 + slides.length) % slides.length;
-            const nextIndex = (normalizedIndex + 1) % slides.length;
-            const isActive = position === normalizedIndex;
-            const isPrev = position === prevIndex;
-            const isNext = position === nextIndex;
-            const isHalloween = slide.title === "Halloween";
+            const isClickable =
+              slide.title === "United State" ||
+              slide.title === "Chess Game Creator" ||
+              slide.title === "Halloween" ||
+              slide.title === "Critters Breakout";
 
             return (
               <div
-                className={`featured__card${isActive ? " is-active" : ""}${
-                  isPrev ? " is-prev" : ""
-                }${isNext ? " is-next" : ""}`}
-                onClick={isHalloween ? handleHalloweenClick : undefined}
-                onKeyDown={isHalloween ? handleCardKeyDown : undefined}
-                role={isHalloween ? "button" : undefined}
-                tabIndex={isHalloween ? 0 : undefined}
-                aria-label={isHalloween ? "Open Halloween project" : undefined}
-                data-link={isHalloween ? "halloween" : undefined}
+                className="featured__card"
+                onClick={isClickable ? () => handleProjectClick(slide.title) : undefined}
+                onKeyDown={
+                  isClickable
+                    ? (event) => handleCardKeyDown(event, slide.title)
+                    : undefined
+                }
+                role={isClickable ? "button" : undefined}
+                tabIndex={isClickable ? 0 : undefined}
+                aria-label={
+                  slide.title === "United State"
+                    ? "Open United State project"
+                    : slide.title === "Chess Game Creator"
+                    ? "Open Chess Game Creator project"
+                    : slide.title === "Halloween"
+                    ? "Open Halloween project"
+                    : slide.title === "Critters Breakout"
+                    ? "Open Critters Breakout project"
+                    : undefined
+                }
+                data-link={
+                  slide.title === "United State"
+                    ? "unitedstate"
+                    : slide.title === "Chess Game Creator"
+                    ? "chess"
+                    : slide.title === "Halloween"
+                    ? "halloween"
+                    : slide.title === "Critters Breakout"
+                    ? "critters"
+                    : undefined
+                }
                 key={`${slide.title}-${index}`}
               >
                 <img
@@ -117,11 +155,11 @@ function Featured() {
         </div>
       </div>
 
-      <div className="featured__progress reveal-on-scroll">
-        <span style={{ width: `${((normalizedIndex + 1) / slides.length) * 100}%` }} />
-      </div>
-
-      <button className="featured__link reveal-on-scroll" type="button">
+      <button
+        className="featured__link reveal-on-scroll"
+        type="button"
+        onClick={handleViewAllClick}
+      >
         View All
       </button>
     </section>

@@ -42,16 +42,27 @@ function About() {
         <section className="about__intro">
           <div className="about__intro-inner">
             <p className="about__eyebrow reveal-on-scroll">About</p>
-            <h1 className="reveal-on-scroll reveal-delay-1">Volcan Interactive Studios</h1>
-            <p className="reveal-on-scroll reveal-delay-2">
-              Volcan Interactive is Africa&apos;s first real time Game UI/UX
-              co-development studio, delivering global standard design and
-              implementation for games and interactive experiences.
-            </p>
-            <p className="reveal-on-scroll reveal-delay-3">
-              We specialize in crafting intuitive, performance focused interfaces
-              for games and interactive experiences, bridging the gap between
-              visual design and technical implementation in Unreal Engine.
+            <h1 className="reveal-on-scroll reveal-delay-1">
+              <span className="about__title-line">Volcan Interactive</span>
+              <span className="about__title-line">Studios</span>
+            </h1>
+            <p className="about__intro-copy reveal-on-scroll reveal-delay-2">
+              <span className="about__intro-line">
+                Volcan Interactive is Africa&apos;s first real time Game UI/UX
+                co-development studio, delivering global standard design and
+                implementation for
+              </span>
+              <span className="about__intro-line about__intro-line--center">
+                games and interactive experiences, it is a game real time interface
+                design studio based in Nigeria.
+              </span>
+              <span className="about__intro-line">
+                We specialize in crafting intuitive, performance focused interfaces
+                for games and interactive experiences, bridging the gap between
+              </span>
+              <span className="about__intro-line">
+                visual design and technical implementation in Unreal Engine.
+              </span>
             </p>
           </div>
         </section>
@@ -128,12 +139,16 @@ function About() {
           />
 
           <div className="about__story-head">
-            <p className="about__eyebrow reveal-on-scroll">Our Story</p>
-            <h2 className="reveal-on-scroll reveal-delay-1">Pain Point</h2>
+            <p className="about__eyebrow about__story-eyebrow reveal-on-scroll">
+              Our Story
+            </p>
+            <h2 className="about__story-title reveal-on-scroll reveal-delay-1">
+              Pain Point
+            </h2>
             <p className="reveal-on-scroll reveal-delay-2">
               From my experience in the African game industry, I&apos;ve observed a
               recurring challenge: most studios struggle to achieve the standard of
-              UI/UX seen in global games. The reason is simple, there are very few
+              UI/UX seen in global games. The reason is simple: there are very few
               experienced UI/UX specialists across Africa, and the few available
               are often beyond the reach of studios&apos; budgets.
             </p>
@@ -148,10 +163,10 @@ function About() {
               are facing the same problem.
             </p>
             <p className="reveal-on-scroll reveal-delay-4">
-              That&apos;s why we founded Volcan Interaction Studio, a co-production
+              That&apos;s why we founded Volcan Interactive Studio, a co-production
               partner dedicated to solving this challenge. At Volcan, we don&apos;t
               just make interfaces, we craft immersive player experiences by
-              combining design expertise with hands on Unreal Engine
+              combining design expertise with hands-on Unreal Engine
               implementation. We provide studios with the dedicated UI/UX support
               they need to deliver games at AAA standards, without burning out
               their teams or compromising on quality.
@@ -167,7 +182,7 @@ function About() {
             <article>
               <p className="about__eyebrow reveal-on-scroll reveal-left">What We See</p>
               <h3 className="reveal-on-scroll reveal-left reveal-delay-1">Our Vision</h3>
-              <p className="reveal-on-scroll reveal-left reveal-delay-2">
+              <p className="about__vision-copy reveal-on-scroll reveal-left reveal-delay-2">
                 To be Africa&apos;s leading real time interface design studio,
                 empowering developers worldwide to deliver immersive and seamless
                 player experiences.
@@ -178,7 +193,7 @@ function About() {
                 What We Came To Do
               </p>
               <h3 className="reveal-on-scroll reveal-right reveal-slow reveal-delay-1">Our Mission</h3>
-              <p className="reveal-on-scroll reveal-right reveal-slow reveal-delay-2">
+              <p className="about__mission-copy reveal-on-scroll reveal-right reveal-slow reveal-delay-2">
                 We partner with studios and creators to design, prototype, and
                 implement high quality game UI/UX that elevates gameplay, supports
                 storytelling, and enhances performance.
