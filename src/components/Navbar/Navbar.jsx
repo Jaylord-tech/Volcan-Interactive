@@ -13,7 +13,7 @@ function Navbar({ hideBottomLine = false }) {
   useEffect(() => {
     const getScrollY = () =>
       window.pageYOffset || document.documentElement.scrollTop || 0;
-    lastScrollYRef.current = getScrollY();
+    lastScrollYRef.current = Math.max(getScrollY(), 0);
 
     let ticking = false;
     const handleScroll = () => {
@@ -24,13 +24,18 @@ function Navbar({ hideBottomLine = false }) {
       if (ticking) return;
       ticking = true;
       requestAnimationFrame(() => {
-        const currentY = getScrollY();
-        const delta = currentY - lastScrollYRef.current;
-        if (delta > 0) {
-          setShowNav(false);
-        } else if (delta < 0) {
+        const currentY = Math.max(getScrollY(), 0);
+        if (currentY <= 10) {
           setShowNav(true);
-        } else if (currentY <= 4) {
+          lastScrollYRef.current = currentY;
+          ticking = false;
+          return;
+        }
+
+        const delta = currentY - lastScrollYRef.current;
+        if (delta > 2) {
+          setShowNav(false);
+        } else if (delta < -2) {
           setShowNav(true);
         }
         lastScrollYRef.current = currentY;
