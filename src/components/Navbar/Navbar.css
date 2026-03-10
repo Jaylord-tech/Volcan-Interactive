@@ -128,10 +128,8 @@
   transform: translate(-4px, 4px);
 }
 
-.hero__links a.is-active::before,
-.hero__links a.is-active::after,
-.hero__links a:hover::before,
-.hero__links a:hover::after {
+.hero__links a:hover:not(.is-active)::before,
+.hero__links a:hover:not(.is-active)::after {
   opacity: 1;
   transform: translate(0, 0);
 }
@@ -349,10 +347,8 @@
   color: #ff7418;
 }
 
-.hero__mobile-menu a.is-active::before,
-.hero__mobile-menu a.is-active::after,
-.hero__mobile-menu a:hover::before,
-.hero__mobile-menu a:hover::after {
+.hero__mobile-menu a:hover:not(.is-active)::before,
+.hero__mobile-menu a:hover:not(.is-active)::after {
   opacity: 1;
   transform: translate(0, 0);
 }

@@ -61,7 +61,7 @@ function About() {
                 for games and interactive experiences, bridging the gap between
               </span>
               <span className="about__intro-line">
-                visual design and technical implementation in Unreal Engine.
+                {" "}visual design and technical implementation in Unreal Engine.
               </span>
             </p>
           </div>

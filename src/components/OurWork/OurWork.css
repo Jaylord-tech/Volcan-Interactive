@@ -106,10 +106,8 @@
   transform: translate(-4px, 4px);
 }
 
-.ourwork__filters button.is-active::before,
-.ourwork__filters button.is-active::after,
-.ourwork__filters button:hover::before,
-.ourwork__filters button:hover::after {
+.ourwork__filters button:hover:not(.is-active)::before,
+.ourwork__filters button:hover:not(.is-active)::after {
   opacity: 1;
   transform: translate(0, 0);
 }
