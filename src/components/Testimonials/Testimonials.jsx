@@ -35,10 +35,17 @@ function Testimonials() {
       <div className="testimonials__card">
         <div className="testimonials__copy">
           <p className="reveal-on-scroll">
-            Corem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-            turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus
-            nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum
-            tellus elit sed risus. Maecenas eget condimentum velit.
+            Volcan Interactive&apos;s contribution to Chess Game Creator has been
+            crucial in delivering a premium look and experience for its users.
+            We often get asked, &ldquo;How can this plugin be free?&rdquo; and a
+            big reason for that question is the presentation, which was under
+            Volcan Interactive&apos;s care.
+          </p>
+          <p className="reveal-on-scroll">
+            I cannot say enough good things about their drive toward excellence
+            and strong work ethic. I&apos;m excited for more collaboration
+            opportunities in the future and confidently vouch for Volcan
+            Interactive&apos;s UI/UX work.
           </p>
           <span className="testimonials__tag reveal-on-scroll">
             Chess Game Creator

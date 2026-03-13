@@ -17,8 +17,10 @@
   width: 100%;
   display: block;
   object-fit: cover;
-  animation: none;
-  transform: none;
+  animation: blog-hero-zoom 15s ease-in-out infinite;
+  transform: scale(1);
+  transform-origin: center center;
+  will-change: transform;
 }
 
 .blog__hero-image-wrap {
@@ -285,10 +287,17 @@
 @keyframes blog-hero-zoom {
   0%,
   100% {
-    transform: scale(1);
+    transform: translateY(0) scale(1);
   }
   50% {
-    transform: scale(1.06);
+    transform: translateY(-1.5%) scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blog__hero-image {
+    animation: none;
+    transform: none;
   }
 }
 

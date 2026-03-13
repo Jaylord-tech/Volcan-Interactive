@@ -180,6 +180,63 @@
   margin-top: 24px;
 }
 
+.contact__success {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: min(460px, calc(100vw - 32px));
+  padding: 26px 28px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  background: rgba(10, 10, 10, 0.96);
+  border: 1px solid rgba(255, 155, 93, 0.72);
+  border-radius: 18px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(16px);
+  z-index: 40;
+  animation: contact-success-pop 320ms ease;
+  transform: translate(-50%, -50%);
+  font-family: "Sk-Modernist", "Poppins", "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #ff9b5d;
+}
+
+.contact__success-title {
+  font-family: "Vastago Grotesk", "Poppins", "Segoe UI", sans-serif;
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.contact__success-text {
+  display: block;
+  max-width: 28ch;
+}
+
+.contact__success-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  color: #ff9b5d;
+  font-family: inherit;
+  font-size: 22px;
+  line-height: 1;
+  padding: 0;
+  flex: 0 0 auto;
+  cursor: pointer;
+}
+
 @keyframes contact-ray {
   0% {
     transform: translateX(-120%) rotate(8deg);
@@ -201,6 +258,17 @@
   }
   50% {
     background-position: 50% 42%;
+  }
+}
+
+@keyframes contact-success-pop {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% - 16px)) scale(0.94);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
   }
 }
 
@@ -239,6 +307,23 @@
     font-size: 16px;
     line-height: 26px;
     margin-top: 18px;
+  }
+
+  .contact__success {
+    width: min(360px, calc(100vw - 24px));
+    padding: 22px 20px 18px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .contact__success-title {
+    font-size: 22px;
+  }
+
+  .contact__success-close {
+    top: 12px;
+    right: 12px;
+    font-size: 20px;
   }
 }
 

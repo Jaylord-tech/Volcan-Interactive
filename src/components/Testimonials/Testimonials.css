@@ -137,8 +137,8 @@
 }
 
 .testimonials__image img {
-  width: 99.4px;
-  height: 144.93px;
+  width: clamp(112px, 9vw, 126px);
+  height: auto;
   object-fit: contain;
   animation: none;
 }
