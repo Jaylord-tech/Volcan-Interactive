@@ -14,6 +14,15 @@ function Navbar({ hideBottomLine = false }) {
     const getScrollY = () =>
       window.pageYOffset || document.documentElement.scrollTop || 0;
     lastScrollYRef.current = Math.max(getScrollY(), 0);
+    const isMobileHomePage =
+      window.matchMedia("(max-width: 960px)").matches &&
+      location.pathname === "/";
+
+    if (isMobileHomePage) {
+      setShowNav(true);
+      return undefined;
+    }
+
     const SHOW_ALWAYS_THRESHOLD = 120;
     const HIDE_ONLY_AFTER = 140;
 
@@ -49,7 +58,7 @@ function Navbar({ hideBottomLine = false }) {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [isMenuOpen]);
+  }, [isMenuOpen, location.pathname]);
 
   useEffect(() => {
     if (isMenuOpen) {
