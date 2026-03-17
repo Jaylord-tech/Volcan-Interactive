@@ -163,7 +163,7 @@ function About() {
               are facing the same problem.
             </p>
             <p className="reveal-on-scroll reveal-delay-4">
-              That&apos;s why we founded Volcan Interactive Studio, a co-production
+              That&apos;s why we founded Volcan Interactive Studio, a co-development
               partner dedicated to solving this challenge. At Volcan, we don&apos;t
               just make interfaces, we craft immersive player experiences by
               combining design expertise with hands-on Unreal Engine
