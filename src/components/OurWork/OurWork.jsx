@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./OurWork.css";
 import Footer from "../Footer/Footer.jsx";
@@ -9,21 +9,27 @@ const showcaseItems = [
   {
     title: "Chess Game Creator",
     image: "/Volcan-Interactive/assests/chessGame.webp",
+    platforms: ["PC", "Console"],
   },
   {
     title: "Halloween",
     image: "/Volcan-Interactive/assests/halloween.webp",
+    platforms: ["PC", "Console"],
   },
   {
     title: "Critters' Breakout!",
     image: "/Volcan-Interactive/assests/critters.webp",
     isWide: false,
+    platforms: ["PC", "Mobile"],
   },
   {
     title: "United State",
     image: "/Volcan-Interactive/assests/unitedState.webp",
+    platforms: ["PC", "Console"],
   },
 ];
+
+const filters = ["All", "PC", "Console", "Mobile", "Web3"];
 
 const partnerLogos = [
   { name: "Figma", image: "/Volcan-Interactive/assests/figma.webp" },
@@ -36,6 +42,7 @@ const partnerLogos = [
 function OurWork() {
   const navigate = useNavigate();
   const sectionRef = useRef(null);
+  const [activeFilter, setActiveFilter] = useState("All");
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -56,7 +63,14 @@ function OurWork() {
 
     elements.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, []);
+  }, [activeFilter]);
+
+  const filteredShowcaseItems =
+    activeFilter === "All"
+      ? showcaseItems
+      : showcaseItems.filter((item) => item.platforms.includes(activeFilter));
+
+  const centerLastCard = filteredShowcaseItems.length % 3 === 1;
 
   const handleCardMove = (event) => {
     const card = event.currentTarget;
@@ -110,16 +124,22 @@ function OurWork() {
           <span className="reveal-on-scroll reveal-right reveal-delay-2">Featured</span>
         </h1>
           <div className="ourwork__filters reveal-on-scroll reveal-up reveal-delay-2">
-            <button type="button" className="is-active">All</button>
-            <button type="button">PC</button>
-            <button type="button">Console</button>
-            <button type="button">Mobile</button>
-            <button type="button">Web3</button>
+            {filters.map((filter) => (
+              <button
+                key={filter}
+                type="button"
+                className={activeFilter === filter ? "is-active" : undefined}
+                aria-pressed={activeFilter === filter}
+                onClick={() => setActiveFilter(filter)}
+              >
+                {filter}
+              </button>
+            ))}
           </div>
         </div>
 
-        <div className="ourwork__grid">
-        {showcaseItems.map((item, index) => {
+        <div className={`ourwork__grid${centerLastCard ? " ourwork__grid--center-last" : ""}`}>
+        {filteredShowcaseItems.map((item, index) => {
           const isClickable =
             item.title === "United State" ||
             item.title === "Chess Game Creator" ||
