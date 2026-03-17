@@ -8,7 +8,7 @@ import GetInTouch from "../GetInTouch/GetInTouch.jsx";
 const showcaseItems = [
   {
     title: "Chess Game Creator",
-    image: "/Volcan-Interactive/assests/chess.webp",
+    image: "/Volcan-Interactive/assests/chessGame.webp",
   },
   {
     title: "Halloween",

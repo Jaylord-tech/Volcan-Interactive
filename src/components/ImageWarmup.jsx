@@ -25,7 +25,7 @@ const WARMUP_IMAGE_URLS = [
   "/Volcan-Interactive/assests/weOffer22.webp",
   "/Volcan-Interactive/assests/weOffer33.webp",
   "/Volcan-Interactive/assests/weOffer44.webp",
-  "/Volcan-Interactive/assests/chess.webp",
+  "/Volcan-Interactive/assests/chessGame.webp",
   "/Volcan-Interactive/assests/halloween.webp",
   "/Volcan-Interactive/assests/critters.webp",
   "/Volcan-Interactive/assests/unitedState.webp",

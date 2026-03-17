@@ -4,7 +4,7 @@ import "./Featured.css";
 
 const slides = [
   { title: "United State", image: "/Volcan-Interactive/assests/unitedState.webp" },
-  { title: "Chess Game Creator", image: "/Volcan-Interactive/assests/chess.webp" },
+  { title: "Chess Game Creator", image: "/Volcan-Interactive/assests/chessGame.webp" },
   { title: "Halloween", image: "/Volcan-Interactive/assests/halloween.webp" },
   { title: "Critters Breakout", image: "/Volcan-Interactive/assests/critters.webp" },
 ];

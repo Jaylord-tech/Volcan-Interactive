@@ -132,7 +132,7 @@
 
 .ourwork__card {
   background: #0a0a0a;
-  border: none;
+  border: 1px solid transparent;
   height: 180px;
   overflow: hidden;
   position: relative;
@@ -184,7 +184,8 @@
 }
 
 .ourwork__card:hover {
-  box-shadow: 0 18px 40px rgba(255, 116, 24, 0.18);
+  border-color: #ffb36b;
+  box-shadow: 0 18px 40px rgba(255, 179, 107, 0.22);
   transform: perspective(900px) translateY(-4px)
     rotateX(var(--tilt-rotate-x, 0deg)) rotateY(var(--tilt-rotate-y, 0deg));
 }
