@@ -56,14 +56,14 @@ function Hero() {
           <h1>
             Crafting the Future of Interactive
             <br />
-            Game Interfaces
           </h1>
           <p>
             Volcan Interactive is{" "}
             <span className="hero-landing__highlight">
-              Africa&apos;s first real time Game UI/UX Co-development studio
+              Africa&apos;s first real time Game UI/UX Co-development and outsourcing studio.
             </span>
-            . Designing intuitive, performance focused interfaces that elevate
+            {" "}
+            Designing intuitive, performance focused interfaces that elevate
             gameplay and player immersion, without compromising speed, creativity,
             or quality.
           </p>
