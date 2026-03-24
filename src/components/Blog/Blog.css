@@ -13,6 +13,18 @@
   --blog-design-bottom: 55%;
 }
 
+.blog__hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 6px;
+  background: #000000;
+  pointer-events: none;
+  z-index: 3;
+}
+
 .blog__hero-image {
   width: 100%;
   display: block;
@@ -37,17 +49,19 @@
   pointer-events: none;
   z-index: 2;
   animation: none;
+  filter: brightness(0) saturate(0);
 }
 
 .blog__hero-design-bottom {
   position: absolute;
   left: 0;
-  bottom: -140px;
+  bottom: clamp(-212px, calc(-9.72vw + 8px), -132px);
   width: 100%;
   height: auto;
   pointer-events: none;
   z-index: 2;
   animation: none;
+  filter: brightness(0) saturate(0);
 }
 
 .blog__content {
