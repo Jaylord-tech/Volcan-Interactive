@@ -12,38 +12,38 @@ const defaultCopyParagraphs = [
 const defaultGalleryThumbs = [
   {
     className: "blog__thumb blog__thumb--4 reveal-on-scroll reveal-left reveal-delay-3",
-    src: "/Volcan-Interactive/assests/blogImg4.webp",
+    src: "/assests/blogImg4.webp",
     alt: "Halloween character 4",
   },
   {
     className: "blog__thumb blog__thumb--3 reveal-on-scroll reveal-left reveal-delay-2",
-    src: "/Volcan-Interactive/assests/blogImg3.webp",
+    src: "/assests/blogImg3.webp",
     alt: "Halloween character 3",
   },
   {
     className: "blog__thumb blog__thumb--2 reveal-on-scroll reveal-left reveal-delay-1",
-    src: "/Volcan-Interactive/assests/blogImg2.webp",
+    src: "/assests/blogImg2.webp",
     alt: "Halloween character 2",
   },
   {
     className: "blog__thumb blog__thumb--1 reveal-on-scroll reveal-left",
-    src: "/Volcan-Interactive/assests/blogImg1.webp",
+    src: "/assests/blogImg1.webp",
     alt: "Halloween character 1",
   },
 ];
 
 function Blog({
   sectionId = "halloween",
-  heroImage = "/Volcan-Interactive/assests/blogBackground.webp",
+  heroImage = "/assests/blogBackground.webp",
   heroImageMobile = "",
-  titleImage = "/Volcan-Interactive/assests/halloweenText.webp",
+  titleImage = "/assests/halloweenText.webp",
   titleText = "",
   titleTextClassName = "",
   titleSubtext = "",
   titleSubtextClassName = "",
   titleSubtextPlacement = "inline",
-  mainImage = "/Volcan-Interactive/assests/blogMain.webp",
-  galleryImage = "/Volcan-Interactive/assests/blogBackground.webp",
+  mainImage = "/assests/blogMain.webp",
+  galleryImage = "/assests/blogBackground.webp",
   galleryImageMobile = "",
   titleAlt = "Halloween",
   mainAlt = "Halloween main piece",
@@ -184,7 +184,7 @@ function Blog({
           </picture>
           <img
             className="blog__hero-design"
-            src="/Volcan-Interactive/assests/blogDesign1.webp"
+            src="/assests/blogDesign1.webp"
             alt=""
             aria-hidden="true"
             loading="eager"
@@ -192,7 +192,7 @@ function Blog({
           />
           <img
             className="blog__hero-design-bottom"
-            src="/Volcan-Interactive/assests/blogDesign2.webp"
+            src="/assests/blogDesign2.webp"
             alt=""
             aria-hidden="true"
             loading="eager"

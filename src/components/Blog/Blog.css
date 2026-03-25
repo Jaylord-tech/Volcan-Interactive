@@ -245,7 +245,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: url("/Volcan-Interactive/assests/button.webp") center / 100% 100% no-repeat;
+  background: url("/assests/button.webp") center / 100% 100% no-repeat;
 }
 
 .blog__cta span {
