@@ -10,62 +10,62 @@ function Chess() {
   const chessThumbs = [
     {
       className: "blog__thumb blog__thumb--4 reveal-on-scroll reveal-left reveal-delay-3",
-      src: "/assests/chess1.webp",
+      src: "/Volcan-Interactive/assests/chess1.webp",
       alt: "Chess piece 1",
     },
     {
       className: "blog__thumb blog__thumb--3 reveal-on-scroll reveal-left reveal-delay-2",
-      src: "/assests/chess2.webp",
+      src: "/Volcan-Interactive/assests/chess2.webp",
       alt: "Chess piece 2",
     },
     {
       className: "blog__thumb blog__thumb--2 reveal-on-scroll reveal-left reveal-delay-1",
-      src: "/assests/chess3.webp",
+      src: "/Volcan-Interactive/assests/chess3.webp",
       alt: "Chess piece 3",
     },
     {
       className: "blog__thumb blog__thumb--1 reveal-on-scroll reveal-left",
-      src: "/assests/chess4.webp",
+      src: "/Volcan-Interactive/assests/chess4.webp",
       alt: "Chess piece 4",
     },
   ];
   const chessGalleryLoopImages = [
     {
-      src: "/assests/chessBackground.webp",
-      srcMobile: "/assests/chessBackground-mobile.webp",
+      src: "/Volcan-Interactive/assests/chessBackground.webp",
+      srcMobile: "/Volcan-Interactive/assests/chessBackground-mobile.webp",
     },
     {
-      src: "/assests/chessGame1.webp",
-      srcMobile: "/assests/chessGame1-mobile.webp",
+      src: "/Volcan-Interactive/assests/chessGame1.webp",
+      srcMobile: "/Volcan-Interactive/assests/chessGame1-mobile.webp",
     },
     {
-      src: "/assests/chessGame2.webp",
-      srcMobile: "/assests/chessGame2-mobile.webp",
+      src: "/Volcan-Interactive/assests/chessGame2.webp",
+      srcMobile: "/Volcan-Interactive/assests/chessGame2-mobile.webp",
     },
     {
-      src: "/assests/chessGame3.webp",
-      srcMobile: "/assests/chessGame3-mobile.webp",
+      src: "/Volcan-Interactive/assests/chessGame3.webp",
+      srcMobile: "/Volcan-Interactive/assests/chessGame3-mobile.webp",
     },
     {
-      src: "/assests/chessGame4.webp",
-      srcMobile: "/assests/chessGame4-mobile.webp",
+      src: "/Volcan-Interactive/assests/chessGame4.webp",
+      srcMobile: "/Volcan-Interactive/assests/chessGame4-mobile.webp",
     },
     {
-      src: "/assests/chessGame5.webp",
-      srcMobile: "/assests/chessGame5-mobile.webp",
+      src: "/Volcan-Interactive/assests/chessGame5.webp",
+      srcMobile: "/Volcan-Interactive/assests/chessGame5-mobile.webp",
     },
   ];
 
   return (
     <Blog
       sectionId="chess"
-      heroImage="/assests/chessBackground.webp"
-      heroImageMobile="/assests/chessBackground-mobile.webp"
+      heroImage="/Volcan-Interactive/assests/chessBackground.webp"
+      heroImageMobile="/Volcan-Interactive/assests/chessBackground-mobile.webp"
       titleText="CHESS GAME CREATOR"
       titleTextClassName="chess__title-text"
-      mainImage="/assests/kingChess.webp"
-      galleryImage="/assests/chessBackground.webp"
-      galleryImageMobile="/assests/chessBackground-mobile.webp"
+      mainImage="/Volcan-Interactive/assests/kingChess.webp"
+      galleryImage="/Volcan-Interactive/assests/chessBackground.webp"
+      galleryImageMobile="/Volcan-Interactive/assests/chessBackground-mobile.webp"
       titleAlt="Chess Game Creator"
       mainAlt="Chess king character"
       galleryAlt="Chess project cover"

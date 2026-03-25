@@ -124,7 +124,7 @@ function Navbar({ hideBottomLine = false }) {
           <NavLink to="/" className="hero__brand">
             <img
               className="hero__brand-logo"
-              src="/assests/logo.webp"
+              src="/Volcan-Interactive/assests/logo.webp"
               alt="Volcan Interactive"
               loading="eager"
               decoding="async"

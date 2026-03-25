@@ -4,8 +4,8 @@ import "./UnitedState.css";
 function UnitedState() {
   const unitedStateGalleryLoopImages = [
     {
-      src: "/assests/unitedBackround.webp",
-      srcMobile: "/assests/unitedBackround-mobile.webp",
+      src: "/Volcan-Interactive/assests/unitedBackround.webp",
+      srcMobile: "/Volcan-Interactive/assests/unitedBackround-mobile.webp",
     },
   ];
   const unitedStateCopy = [
@@ -15,11 +15,11 @@ function UnitedState() {
   return (
     <Blog
       sectionId="unitedstate"
-      heroImage="/assests/unitedBackround.webp"
-      heroImageMobile="/assests/unitedBackround-mobile.webp"
-      titleImage="/assests/unitedText.webp"
-      galleryImage="/assests/unitedBackround.webp"
-      galleryImageMobile="/assests/unitedBackround-mobile.webp"
+      heroImage="/Volcan-Interactive/assests/unitedBackround.webp"
+      heroImageMobile="/Volcan-Interactive/assests/unitedBackround-mobile.webp"
+      titleImage="/Volcan-Interactive/assests/unitedText.webp"
+      galleryImage="/Volcan-Interactive/assests/unitedBackround.webp"
+      galleryImageMobile="/Volcan-Interactive/assests/unitedBackround-mobile.webp"
       titleAlt="United State"
       mainAlt="United State artwork"
       galleryAlt="United State project cover"

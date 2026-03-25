@@ -8,23 +8,23 @@ import GetInTouch from "../GetInTouch/GetInTouch.jsx";
 const showcaseItems = [
   {
     title: "Chess Game Creator",
-    image: "/assests/chessGame.webp",
+    image: "/Volcan-Interactive/assests/chessGame.webp",
     platforms: ["PC", "Console"],
   },
   {
     title: "Halloween",
-    image: "/assests/halloween.webp",
+    image: "/Volcan-Interactive/assests/halloween.webp",
     platforms: ["PC", "Console"],
   },
   {
     title: "Critters' Breakout!",
-    image: "/assests/critters.webp",
+    image: "/Volcan-Interactive/assests/critters.webp",
     isWide: false,
     platforms: ["PC", "Mobile"],
   },
   {
     title: "United State",
-    image: "/assests/unitedState.webp",
+    image: "/Volcan-Interactive/assests/unitedState.webp",
     platforms: ["PC", "Console"],
   },
 ];
@@ -32,11 +32,11 @@ const showcaseItems = [
 const filters = ["All", "PC", "Console", "Mobile", "Web3"];
 
 const partnerLogos = [
-  { name: "Figma", image: "/assests/figma.webp" },
-  { name: "Unreal", image: "/assests/unreal.webp" },
-  { name: "Rive", image: "/assests/rive.webp" },
-  { name: "Unity", image: "/assests/unity.webp" },
-  { name: "Photoshop", image: "/assests/ps.webp" },
+  { name: "Figma", image: "/Volcan-Interactive/assests/figma.webp" },
+  { name: "Unreal", image: "/Volcan-Interactive/assests/unreal.webp" },
+  { name: "Rive", image: "/Volcan-Interactive/assests/rive.webp" },
+  { name: "Unity", image: "/Volcan-Interactive/assests/unity.webp" },
+  { name: "Photoshop", image: "/Volcan-Interactive/assests/ps.webp" },
 ];
 
 function OurWork() {
