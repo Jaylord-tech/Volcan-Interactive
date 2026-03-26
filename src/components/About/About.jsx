@@ -4,11 +4,11 @@ import Footer from "../Footer/Footer.jsx";
 import "./About.css";
 
 const partnerLogos = [
-  { name: "Figma", image: "/Volcan-Interactive/assests/figma.webp" },
-  { name: "Unreal", image: "/Volcan-Interactive/assests/unreal.webp" },
-  { name: "Rive", image: "/Volcan-Interactive/assests/rive.webp" },
-  { name: "Unity", image: "/Volcan-Interactive/assests/unity.webp" },
-  { name: "Photoshop", image: "/Volcan-Interactive/assests/ps.webp" },
+  { name: "Figma", image: "/assests/figma.webp" },
+  { name: "Unreal", image: "/assests/unreal.webp" },
+  { name: "Rive", image: "/assests/rive.webp" },
+  { name: "Unity", image: "/assests/unity.webp" },
+  { name: "Photoshop", image: "/assests/ps.webp" },
 ];
 
 function About() {
@@ -83,7 +83,7 @@ function About() {
         <section className="about__story">
           <img
             className="about__decor about__decor--1"
-            src="/Volcan-Interactive/assests/backDesign1.webp"
+            src="/assests/backDesign1.webp"
             alt=""
             aria-hidden="true"
             loading="lazy"
@@ -91,7 +91,7 @@ function About() {
           />
           <img
             className="about__decor about__decor--2"
-            src="/Volcan-Interactive/assests/backDesign2.webp"
+            src="/assests/backDesign2.webp"
             alt=""
             aria-hidden="true"
             loading="lazy"
@@ -99,7 +99,7 @@ function About() {
           />
           <img
             className="about__decor about__decor--3"
-            src="/Volcan-Interactive/assests/backDesign3.webp"
+            src="/assests/backDesign3.webp"
             alt=""
             aria-hidden="true"
             loading="lazy"
@@ -107,7 +107,7 @@ function About() {
           />
           <img
             className="about__decor about__decor--4"
-            src="/Volcan-Interactive/assests/backDesign4.webp"
+            src="/assests/backDesign4.webp"
             alt=""
             aria-hidden="true"
             loading="lazy"
@@ -115,7 +115,7 @@ function About() {
           />
           <img
             className="about__decor about__decor--5"
-            src="/Volcan-Interactive/assests/backDesign5.webp"
+            src="/assests/backDesign5.webp"
             alt=""
             aria-hidden="true"
             loading="lazy"
@@ -123,7 +123,7 @@ function About() {
           />
           <img
             className="about__decor about__decor--6"
-            src="/Volcan-Interactive/assests/backDesign6.webp"
+            src="/assests/backDesign6.webp"
             alt=""
             aria-hidden="true"
             loading="lazy"
@@ -131,7 +131,7 @@ function About() {
           />
           <img
             className="about__decor about__decor--7"
-            src="/Volcan-Interactive/assests/backDesign2.webp"
+            src="/assests/backDesign2.webp"
             alt=""
             aria-hidden="true"
             loading="lazy"

@@ -53,7 +53,7 @@ function Testimonials() {
         </div>
         <div className="testimonials__image reveal-on-scroll reveal-right">
           <img
-            src="/Volcan-Interactive/assests/grave.webp"
+            src="/assests/grave.webp"
             alt="Grave ornament"
             loading="lazy"
             decoding="async"
