@@ -76,7 +76,9 @@ function GetInTouch() {
       onClick={() => setTextRevealed(true)}
     >
       <div className="contact__header">
-        <p className={`reveal-on-scroll${textRevealed ? " is-visible" : ""}`}>
+        <p
+          className={`contact__eyebrow reveal-on-scroll${textRevealed ? " is-visible" : ""}`}
+        >
           Get in Touch
         </p>
         <h2 className={`reveal-on-scroll${textRevealed ? " is-visible" : ""}`}>

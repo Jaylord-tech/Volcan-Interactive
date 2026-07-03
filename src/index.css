@@ -5,8 +5,8 @@
 }
 
 :root {
-  --font-base: "Sk-Modernist", "Poppins", "Segoe UI", sans-serif;
-  --font-eyebrow: "Vastago Grotesk", "Poppins", "Segoe UI", sans-serif;
+  --font-base: "Outfit", sans-serif;
+  --font-eyebrow: "Space Grotesk", "Poppins", "Segoe UI", sans-serif;
 }
 
 html,
@@ -26,8 +26,12 @@ body {
   position: relative;
 }
 
+body * {
+  font-family: var(--font-base) !important;
+}
+
 [class*="__eyebrow"] {
-  font-family: var(--font-eyebrow);
+  font-family: var(--font-eyebrow) !important;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
